@@ -1,5 +1,7 @@
 #include <stdio.h>
-#include<math.h>
+#include <math.h>
+// int fac(int);//problem 10
+// int power(int,int); // problem 11
 int main()
 {
     // 1st problem
@@ -95,11 +97,11 @@ printf("\nTotal no. of notes are:->%d",total);
         }
     */
     // 6th problem(prime no.)
-    /*
+    /**/
         int num;
         for (int i = 1; i < 301; i++)
         {
-            }*/
+            }/**/
     // 7th problem
     /*int input;
 printf("Enter the no.");
@@ -123,12 +125,12 @@ printf("%d",fac);
             fac = fac * j;
         }
         s = (i / fac);
-       
+
         sum = sum + s;
     }
     printf("sum-->%f", sum);
 */
-//9th problem
+    // 9th problem
     /*
     float sum,eq,ans;
     for (float x= 2; x < 8; x++)
@@ -145,7 +147,44 @@ printf("%d",fac);
             printf("sum-->%f\n", sum);
     }
     */
-   //10th problem
+    // 10th problem
+    /*
+    int num;
+    printf("Enter any no. ");
+    scanf("%d", &num);
+    int a=fac(num);
+printf("%d",a);*/
+//11th problem
+/*
+int num,pow;
+printf("Enter the number :->");
+scanf("%d",&num);
+
+printf("Enter the power :->");
+scanf("%d",&pow);
+int a=power(num,pow);
+printf("%d",a);*/
    
     return 0;
 }
+// problem 10
+/*int fac(int num)
+{
+    int fact = 1;
+    for (int i = 1; i < num+1; i++)
+    {
+
+        fact=fact*i;
+    }
+    return fact;
+}
+*/
+// problem 11
+/*int power(int num,int pow){
+    int numm=1;
+for (int i = 1 ; i < pow+1; i++)
+{
+    numm=numm*num;
+}return numm;
+
+}*/
