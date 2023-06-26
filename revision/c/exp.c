@@ -2,6 +2,9 @@
 #include <math.h>
 // int fac(int);//problem 10
 // int power(int,int); // problem 11
+// int prime_factor(int); // problem 12
+// int rec_sum(int); // problem 13
+int rec_prime_fac(int);//problem 14
 int main()
 {
     // 1st problem
@@ -97,23 +100,36 @@ printf("\nTotal no. of notes are:->%d",total);
         }
     */
     // 6th problem(prime no.)
-    /**/
-        int num;
-        for (int i = 1; i < 301; i++)
+    /*
+// int i=1;
+    for (int i = 2; i < 301; i++)
+        for (int num = 2; num < i; num++)
         {
-            }/**/
+
+            if (i == num)
+            {
+                printf("i am here");
+                printf("%d\n this no. is prime", i);
+            }
+            // if (i % num == 0)
+            // {
+            //     break;
+            // }
+        }
+
+    */
     // 7th problem
     /*int input;
-printf("Enter the no.");
-scanf("%d", &input);
-int fac = 1;
-for (int i = 1; i <= input; i++)
-{
+    printf("Enter the no.");
+    scanf("%d", &input);
+    int fac = 1;
+    for (int i = 1; i <= input; i++)
+    {
     fac = fac * i;
-}
-printf("%d",fac);
+    }
+    printf("%d",fac);
 
-*/
+    */
     // 8th problem
     /*
     float sum = 0.0;
@@ -129,7 +145,7 @@ printf("%d",fac);
         sum = sum + s;
     }
     printf("sum-->%f", sum);
-*/
+    */
     // 9th problem
     /*
     float sum,eq,ans;
@@ -153,18 +169,37 @@ printf("%d",fac);
     printf("Enter any no. ");
     scanf("%d", &num);
     int a=fac(num);
-printf("%d",a);*/
-//11th problem
-/*
-int num,pow;
-printf("Enter the number :->");
-scanf("%d",&num);
+    printf("%d",a);*/
+    // 11th problem
+    /*
+    int num,pow;
+    printf("Enter the number :->");
+    scanf("%d",&num);
 
-printf("Enter the power :->");
-scanf("%d",&pow);
-int a=power(num,pow);
-printf("%d",a);*/
-   
+    printf("Enter the power :->");
+    scanf("%d",&pow);
+    int a=power(num,pow);
+    printf("%d",a);*/
+    // 12th problem
+    /*int num;
+    printf("Enter some number:->");
+    scanf("%d",&num);
+     prime_factor(num);
+      */
+    // 13th problem
+    /*int five_sum;
+
+       printf("\nEnter the no. which sum you want :->");
+       scanf("%d", &five_sum);
+       int sum = rec_sum(five_sum);
+       printf("%d\n", sum);*/
+    // problem 14
+int prime_fac_input;
+printf("Enter the no. get the prime factor:-> ");
+scanf("%d",&prime_fac_input);
+int prim=rec_prime_fac(prime_fac_input);
+printf("%d",prim);
+
     return 0;
 }
 // problem 10
@@ -188,3 +223,50 @@ for (int i = 1 ; i < pow+1; i++)
 }return numm;
 
 }*/
+// problem 12
+/*int prime_factor(int num){
+    int new_num = num;
+    int i = 2;
+    while (new_num>=i)
+
+    {
+        // printf("i%d\t",new_num);
+
+        if (new_num % i == 0)
+        {
+            printf("%d\t", i);
+        new_num = new_num / i;
+        // printf("num->%d\n",new_num);
+
+        }
+        else
+        {
+         i++;
+        }
+
+
+    }
+
+
+}*/
+// problem 13
+/*int rec_sum(int num)
+{
+    int intial, s;
+    if (num != 0)
+    {
+        s = num % 10;
+
+        intial = s + rec_sum(num / 10);
+        }
+    else
+    {
+        return 0;
+    }
+    return intial;
+}
+*/
+//problem 14
+int rec_prime_fac(int num){
+    
+}

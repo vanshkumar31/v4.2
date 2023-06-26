@@ -31,11 +31,15 @@
 ->continue-->skip the condition-->we can say, out from the condition(like break), without stop the loop
 ->fflush(stdin)-->it is use to clean the buffer like when we enter some value through keyboad its value look like "w/n" 'w ' we want but /n also there so next input get that value which we dont want
 ->function-->it is a block of code it is use to reduce the size of code and simplify the same task
-
+->*-->value at address
+->recursion -->when a function call itself
 */
 #include <stdio.h>
-#include <math.h> //need to  use power ,trigno......
-int sum(int a,int b,int c);//function declaration
+#include <math.h>             //need to  use power ,trigno......
+int sum(int a, int b, int c); // function declaration
+void swap(int *, int *);
+int rec(int);
+
 int main()
 {
     printf("Hello world!");
@@ -61,54 +65,85 @@ int main()
     printf("%d\n", a + b);
     printf("%f\n", c);
     printf("%c\n", try);
-    printf("%s\n", name); // for string we use "s"
-    int power = pow(a, b);// need to include math.h lib
-    printf("%d", power); 
-  
-   int i=0;
-   while (i<10)
-   {
-    printf("\n%d",i);
-    i++;//increments value by 1
-   }
-   for (int j = 0; j < 10; j++)
-   {
-    printf("\n%d",j);
-   }
-   for (int a = 0; a < 10; a++)
-   {
-    for (int b = 0; b < 10; b++)
-    {
-        if (a!=b)
-        {
-            continue;       
-        }
-        printf("%d %d\n",a,b);
-    }
-    
-   }
-   char responce;
-   int num;
-   do
-   {
-    printf("Enter a no.");
-    scanf("%d",&num);
-    printf("Square of given no. -->%d\n",num*num);
-    printf("Want to enter another number y/n:->");
-    fflush(stdin);// without fflush it gonna skip scanf it is use to remove any data remain in the buffer 
-    //here stdin refer to standard input device
-    scanf("%c",&responce);
+    printf("%s\n", name);  // for string we use "s"
+    int power = pow(a, b); // need to include math.h lib
+    printf("%d", power);
 
-   } while (responce=='y');
-   int v,p,q;
-   v = 1;
-   p = 2;
-   q = 3;
-   sum(v, p, q); // function call//pass variable name can be different
-   return 0;
+    int i = 0;
+    while (i < 10)
+    {
+        printf("\n%d", i);
+        i++; // increments value by 1
+    }
+    for (int j = 0; j < 10; j++)
+    {
+        printf("\n%d", j);
+    }
+    for (int a = 0; a < 10; a++)
+    {
+        for (int b = 0; b < 10; b++)
+        {
+            if (a != b)
+            {
+                continue;
+            }
+            printf("%d %d\n", a, b);
+        }
+    }
+    char responce;
+    int num;
+    do
+    {
+        printf("Enter a no.");
+        scanf("%d", &num);
+        printf("Square of given no. -->%d\n", num * num);
+        printf("Want to enter another number y/n:->");
+        fflush(stdin); // without fflush it gonna skip scanf it is use to remove any data remain in the buffer
+        // here stdin refer to standard input device
+        scanf("%c", &responce);
+
+    } while (responce == 'y');
+    int v, p, q;
+    v = 1;
+    p = 2;
+    q = 3;
+    sum(v, p, q); // function call//pass variable name can be different
+    printf("\nvalue of p:->%d\n value of q:->%d", p, q);
+    swap(&p, &q);
+    printf("\nvalue of p:->%d\n value of q:->%d", p, q);
+    printf("\nEnter the no. which factorial you want :->");
+    int fac_input;
+    scanf("%d", &fac_input);
+
+    int s = rec(fac_input);
+    printf("%d\n", s);
+    
+    return 0;
 }
 
-int sum(int a,int b, int c)//function definition
+int sum(int a, int b, int c) // function definition
 {
-printf("%d",a+b+c);
+    printf("%d", a + b + c);
+}
+void swap(int *x, int *y)
+{
+    int s;
+    s = *x;
+    *x = *y;
+    *y = s;
+}
+int rec(int num)
+{
+    int store;
+    if (num == 1)
+    {
+        return (1);
+    }
+    else
+    {
+
+        store = rec(num - 1) * num;
+        // printf("%d\n", store);
+    }
+    return store;
 }
