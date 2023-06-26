@@ -5,7 +5,7 @@ int main()
     for ( i = 2; i < 301; i++)
     {
         int isPrime = 1;
-        for (int num = 2; num <= sqrt(i); num++)
+        for (int num = 2; num <= i; num++)
         {
             if (i % num == 0)
             {
