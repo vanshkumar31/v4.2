@@ -34,7 +34,7 @@ Not Equal(!=)-->a!=b
 Less Than(<)-->a>b
 Greater Than(>)-->a<b
 Less Than or Equal to(<=)-->a>=b
-Greater Than or Equal to(>=)-->a<=b
+Greater Than  or Equal to(>=)-->a<=b
 -->Membership operators:
 in-->a in b
 Returns True if a is present in given sequence or collection
