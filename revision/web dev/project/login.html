@@ -11,6 +11,7 @@
 </head>
 
 <body>
+   
 <nav>
     <ul class="nav_left">
         <li>
@@ -19,7 +20,7 @@
             </a>
         </li>
         <li>
-            <a href="product.html">
+            <a href="#product">
                 Product
             </a>
         </li>
@@ -43,22 +44,24 @@
             <!--sign up icon-->
         </li>
 
-        <li>Mode
+        <li style="cursor: pointer;">Mode
             <!--icon of mode(dark and light)-->
         </li>
 
     </ul>
-</nav>
-<form name="login_Form" onsubmit="verifySubmit()"  method="get">
-<label >Email</label>
-<input name="email" type="email" placeholder="Email"  />
-<span id="eE"style="color: red"></span><br />
-<label>Password</label>
-<input placeholder="Password"name="password" type="password">
-<span id="passE" style="color: red"></span>
-</form>
-<button type="button" onclick="showPassword()">Show Password</button>
-<button type="button" onclick="hidePassword()">Hide Password</button>
-  <button type="button" onclick="verifySubmit()">Submit</button>
-<br><br>
-<a href="registration.html" >new user</a>
+</nav><div class="form_bg">
+    <div class="form_style"><h1>Login</h1>
+        <form name="login_Form" onsubmit="verifySubmit()" method="get">
+            <label>Email</label>
+            <input name="email" type="email" placeholder="Email" />
+            <span id="eE" style="color: red"></span><br />
+            <label>Password</label>
+            <input placeholder="Password" name="password" minlength="12" type="password">
+            <span id="passE" style="color: red"></span>
+        </form>
+        <button type="button" onclick="showPassword()">Show Password</button>
+        <button type="button" onclick="hidePassword()">Hide Password</button>
+        <button type="button" onclick="verifySubmit()">Submit</button>
+        <br><br>
+        <a href="registration.html">new user</a>
+    </div></div>

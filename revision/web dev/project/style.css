@@ -2,20 +2,26 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    border: none;
     scroll-behavior: smooth;
     font-family: "Poppins", sans-serif;
     text-transform: capitalize;
 
 }
-body{
+
+body {
     overflow-x: hidden;
 
 }
-nav a:hover {color: #FAECD6;}
+
+nav a:hover {
+    color: #FAECD6;
+}
+
 nav a {
 
     color: #F2DEBA;
-   
+
 }
 
 .center {
@@ -51,13 +57,14 @@ nav {
 header {
     position: relative;
     overflow-y: hidden;
-    object-fit:cover;
+    object-fit: cover;
     max-height: 450px;
 }
+
 header a {
     position: absolute;
     top: 50%;
-    color:#F2DEBA;
+    color: #F2DEBA;
     background-color: #820000;
     border: 0;
     padding: 5px;
@@ -65,27 +72,27 @@ header a {
     cursor: pointer;
 
 }
-.pre{
-    left:0%
+
+.pre {
+    left: 0%
 }
-.next_s{
+
+.next_s {
     right: 0%;
 }
+
 .slider img {
 
     z-index: -1;
-   height:inherit;
+    height: inherit;
     width: 100%;
     min-height: 100px;
-   clip:rect(0px, 0px, 100px, 0px)
+    clip: rect(0px, 0px, 100px, 0px)
 }
 
 label {
     display: block;
-    margin: 15px 0;
-
-
-}
+   }
 
 input,
 textarea {
@@ -95,47 +102,74 @@ textarea {
     ;
 
 }
+
 /*    copy */
- 
- ::placeholder {
-     text-align: center;
- }
 
- button {
-     border: none;
-     border-radius: 50px;
-     padding: 10px;
-     display: inline-block;
+::placeholder {
+    text-align: center;
+}
 
- }
+button {
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    background-color: #4E6C50;
+    color: #F2DEBA;
+    display: inline-block;
 
- button:hover {
-     background-color: deepskyblue
- }
+}
 
- button:active {
-     background-color: rgb(18, 114, 224);
- }
+button:hover {
+    background-color: deepskyblue
+}
 
- button#reset {
-     background-color: crimson;
-     color: whitesmoke;
+button:active {
+    background-color: rgb(18, 114, 224);
+}
 
- }
+button#reset {
+    background-color: crimson;
+    color: whitesmoke;
 
- form label {
-     /* text-align: center; */
-     color: darkslateblue;
-     margin: 10px;
+}
 
- }
+form label {
+    /* text-align: center; */
+    color:#820000;
+    font-size: medium;
+    margin: 10px 0px;
+    
 
- form input,textarea {
-     margin-bottom: 10px;
-     margin-top: 5px;
-     width: 50%;
-     display: block;
-     border: 2px solid yellowgreen;
-     padding: 5px;
-     border-radius: 5px;
- }
+}
+
+form input,
+textarea {
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 95%;
+    display: block;
+    border: 2px solid;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.form_style {
+    width: 400px;
+    border-radius: 12px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form_bg {
+
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1606787366850-de6330128bfc");
+
+}
