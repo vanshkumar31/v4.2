@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Registration</title>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav_left">
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="product.html">
+                    Product
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">
+                    Contact Us
+                </a>
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
+        </ul>
+        <ul class="nav_right">
+            <li><a href="cart.html">Cart</a>
+                <!-- icon of cart -->
+            </li>
+    
+            <li>
+                <a href="login.html">Login </a>
+                <!--sign up icon-->
+            </li>
+    
+            <li>Mode
+                <!--icon of mode(dark and light)-->
+            </li>
+    
+        </ul>
+    </nav>
+    <form name="form" onsubmit="verifyForm() " method="get">
+        <label>User Name:</label><input name="name" type="text" placeholder="User name" id="userName" align="middle" /><span
+            id="nE" style="color: red"></span> <br />
+        <label>Email:</label>
+        <input name="email" type="email" placeholder="Email" id="email" align="middle" /><span id="eE"
+            style="color: red"></span><br />
+        <label>Phone Number:</label><input name="userNumber " type="number" placeholder="Number" id="numb"
+            align="middle" /><span id="pE" style="color: red"></span><br />
+        <label>Password:</label>
+        <input name="password" type="Password" placeholder="Password" id="Password" align="middle" /><span id="passE"
+            style="color: red"></span>
+        <button type="button" onclick="showPassword()">Show Password</button>
+        <button type="button" onclick="hidePassword()">Hide Password</button><br />
+        <button type="button" onclick="verifyForm()">Submit</button>
+    </form>
