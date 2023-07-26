@@ -10,7 +10,7 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    console.log("ok report")
+   
     let slides = document.getElementsByClassName("myslide");
 
     if (n > slides.length) {
@@ -27,10 +27,10 @@ function showSlides(n) {
 
 }
 function showPassword() {
-    document.getElementById("Password").type = "text";
+    document.getElementById("password").type = "text";
 }
 function hidePassword() {
-    document.getElementById("Password").type = "password";
+    document.getElementById("password").type = "password";
 }
 function verifySubmit(){
    
@@ -55,12 +55,14 @@ function verifySubmit(){
     }
 }
 function verifyForm() {
-
+   
+  
     var Name = document.forms["form"]["name"].value;
     var Email = document.forms["form"]["email"].value;
     var Numb = document.forms["form"]["numb"].value;
     var Password = document.forms["form"]["password"].value;
-
+    var Address = document.forms["form"]["address"].value;
+    console.log(Address);
     if (Name == "") {
         document.getElementById("nE").innerHTML =
             "Name field should not be empty ";
@@ -86,7 +88,13 @@ function verifyForm() {
     else {
         document.getElementById("pE").innerHTML = "";
     }
-
+    if (Address == "") {
+        document.getElementById("addE").innerHTML =
+            "Address field should not be empty ";
+        document.getElementById("AddressE").style.color = "red";
+    } else {
+        document.getElementById("AddressE").innerHTML = "";
+    }
     if (Password == "") {
         document.getElementById("passE").innerHTML =
             "Password field should not be empty ";
@@ -137,3 +145,69 @@ function verifyForm() {
         }
     }
 }
+// ------------------------------------------------------------------------------
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+// -------------------------------------------------------------------------
+
+// Add to Cart functionality
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+const cartItems = document.getElementById('cart-items');
+
+function addToCartHandler() {
+    console.log("somethig");
+    // const button = this;
+    // const productId = button.dataset.productId;
+    // const product = {
+    //     id: productId,
+    //     name: button.parentElement.querySelector('h3').textContent,
+    //     price: button.parentElement.querySelector('p').textContent
+    // };
+
+    // let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // const existingProduct = cart.find(function (item) {
+    //     return item.id === productId;
+    // });
+
+    // if (!existingProduct) {
+    //     cart.push(product);
+    // }
+
+    // localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+addToCartButtons.forEach(function (button) {
+    button.addEventListener('click', addToCartHandler);
+    console.log("ohhhh");
+});
+
+
+// Show Cart functionality
+const cartModal = document.getElementById('cart-modal');
+const cartButton = document.createElement('button');
+cartButton.textContent = 'View Cart';
+cartButton.addEventListener('click', () => {
+    cartItems.innerHTML = ''; // Clear the cart items before re-populating
+
+    // Get the cart items from local storage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Populate the cart items in the modal
+    cart.forEach((item) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ${item.price}`;
+        cartItems.appendChild(li);
+    });
+
+    // Show the cart modal
+    cartModal.style.display = 'block';
+});
+
+// Append the cart button to the body
+document.body.appendChild(cartButton);

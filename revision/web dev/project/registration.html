@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="iscript.js"></script>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Registration</title>
 </head>
 
-<body>
+<body >
     <nav>
         <ul class="nav_left">
             <li>
@@ -37,31 +37,44 @@
             <li><a href="cart.html">Cart</a>
                 <!-- icon of cart -->
             </li>
-    
+
             <li>
                 <a href="login.html">Login </a>
                 <!--sign up icon-->
             </li>
-    
+
             <li style="cursor: pointer;">Mode
                 <!--icon of mode(dark and light)-->
             </li>
-    
+
         </ul>
-    </nav><div class="form_bg">
-    <div class="form_style"  ><h2>Registration</h2>
-    <form name="form" onsubmit="verifyForm()" method="get">
-        <label>User Name</label><input name="name" type="text" placeholder="User name" id="userName" align="middle" /><span
-            id="nE" style="color: red"></span> <br />
-        <label>Email</label>
-        <input name="email" type="email" placeholder="Email" id="email" align="middle" /><span id="eE"
-            style="color: red"></span><br />
-        <label>Phone Number</label><input name="userNumber " type="number" placeholder="Number" id="numb"
-            align="middle" /><span id="pE" style="color: red"></span><br />
-        <label>Password</label>
-        <input name="password" type="Password" placeholder="Password" id="Password" align="middle" /><span id="passE"
-            style="color: red"></span>
-        <button type="button" onclick="showPassword()">Show Password</button>
-        <button type="button" onclick="hidePassword()">Hide Password</button>
-        <button type="button" onclick="verifyForm()">Submit</button>
-    </form></div></div>
+    </nav>
+    <div class="form_bg">
+        <div class="form_style "style=" margin-top: 150px;">
+            <h2>Registration</h2>
+            <form name="form" method="get">
+                <label>User Name</label>
+                <input name="name" type="text" placeholder="User name" id="name" />
+                <span id="userNameE"></span> <br />
+                <label>Email</label>
+                <input name="Email" type="email" placeholder="Email" id="email" />
+                <span id="userEmailE"></span><br />
+                <label>Phone Number</label><input name="userNumber " type="number" placeholder="Number" id="numb" />
+                <span id="userNumbE"></span><br />
+                <label>Your Address</label>
+                <input name="Address" type="text" id="address" placeholder="Your Address"/>
+                <span id="addE"></span><br>
+                <label>Password</label>
+                <input name="password" type="password" placeholder="Password" id="password" />
+                <span id="passE"></span><br>
+                <label>Confirm Password</label>
+                <input name="password" type="password" placeholder="Password" id="conPassword" />
+                <span id="cPassE"></span><br>
+                <button type="button" onclick="showPassword()">Show Password</button>
+                <button type="button" onclick="hidePassword()">Hide Password</button>
+                <button type="button" onclick="verifyForm()">Submit</button>
+            </form>
+        </div>
+    </div>
+    </body></html>
+   

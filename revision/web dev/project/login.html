@@ -5,63 +5,66 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="iscript.js"></script>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>login</title>
 </head>
 
 <body>
-   
-<nav>
-    <ul class="nav_left">
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-        <li>
-            <a href="#product">
-                Product
-            </a>
-        </li>
-        <li>
-            <a href="contact.html">
-                Contact Us
-            </a>
-        <li>
-            <a href="about.html">
-                About Us
-            </a>
-        </li>
-    </ul>
-    <ul class="nav_right">
-        <li><a href="cart.html">Cart</a>
-            <!-- icon of cart -->
-        </li>
 
-        <li>
-            <a href="login.html">Login </a>
-            <!--sign up icon-->
-        </li>
+    <nav>
+        <ul class="nav_left">
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#product">
+                    Product
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">
+                    Contact Us
+                </a>
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
+        </ul>
+        <ul class="nav_right">
+            <li><a href="cart.html">Cart</a>
+                <!-- icon of cart -->
+            </li>
 
-        <li style="cursor: pointer;">Mode
-            <!--icon of mode(dark and light)-->
-        </li>
+            <li>
+                <a href="login.html">Login </a>
+                <!--sign up icon-->
+            </li>
 
-    </ul>
-</nav><div class="form_bg">
-    <div class="form_style"><h1>Login</h1>
-        <form name="login_Form" onsubmit="verifySubmit()" method="get">
-            <label>Email</label>
-            <input name="email" type="email" placeholder="Email" />
-            <span id="eE" style="color: red"></span><br />
-            <label>Password</label>
-            <input placeholder="Password" name="password" minlength="12" type="password">
-            <span id="passE" style="color: red"></span>
-        </form>
-        <button type="button" onclick="showPassword()">Show Password</button>
-        <button type="button" onclick="hidePassword()">Hide Password</button>
-        <button type="button" onclick="verifySubmit()">Submit</button>
-        <br><br>
-        <a href="registration.html">new user</a>
-    </div></div>
+            <li style="cursor: pointer;">Mode
+                <!--icon of mode(dark and light)-->
+            </li>
+
+        </ul>
+    </nav>
+    <div class="form_bg">
+        <div class="form_style">
+            <h1>Login</h1>
+            <form name="login_Form"  method="get">
+                <label>Email</label>
+                <input name="email" type="email" placeholder="Email" id="email" >
+                <span id="userEmailE"></span><br />
+                <label>Password</label>
+                <input placeholder="Password" id="password" name="password" minlength="12" type="password">
+                <span id="passE"></span>
+            </form>
+            <button type="button" onclick="showPassword()">Show Password</button>
+            <button type="button" onclick="hidePassword()">Hide Password</button>
+            <button type="submit" onclick="verifySubmit()">Submit</button>
+            <br><br>
+            <a href="registration.html">new user</a>
+        </div>
+    </div>

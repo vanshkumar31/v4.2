@@ -11,41 +11,57 @@
 </head>
 
 <body>
-<nav>
-    <ul class="nav_left">
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-        <li>
-            <a href="#product">
-                Product
-            </a>
-        </li>
-        <li>
-            <a href="contact.html">
-                Contact Us
-            </a>
-        <li>
-            <a href="about.html">
-                About Us
-            </a>
-        </li>
-    </ul>
-    <ul class="nav_right">
-        <li><a href="cart.html">Cart</a>
-            <!-- icon of cart -->
-        </li>
+    <nav>
+        <ul class="nav_left">
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="menu.html">
+                    Menu
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">
+                    Contact Us
+                </a>
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
+        </ul>
+        <ul class="nav_right">
+            <li><a href="cart.html">Cart</a>
+                <!-- icon of cart -->
+            </li>
 
-        <li>
-            <a href="login.html">Login </a>
-            <!--sign up icon-->
-        </li>
+            <li>
+                <a href="login.html">Login </a>
+                <!--sign up icon-->
+            </li>
 
-        <li style="cursor: pointer;">Mode
-            <!--icon of mode(dark and light)-->
-        </li>
+            <li style="cursor: pointer;">Mode
+                <!--icon of mode(dark and light)-->
+            </li>
 
-    </ul>
-</nav>
+        </ul>
+    </nav>
+    <div class="form_contact">
+        <div class="form_style">
+            <form name="form" onsubmit="verifyForm()" method="get">
+                <label>User Name</label><input name="name" type="text" placeholder="User name" id="userName"
+                    align="middle" /><span id="nE" style="color: red"></span> <br />
+                <label>Email</label>
+                <input name="email" type="email" placeholder="Email" id="email" align="middle" /><span id="eE"
+                    style="color: red"></span><br />
+                <label>Phone Number</label><input name="userNumber " type="number" placeholder="Number" id="numb"
+                    align="middle" /><span id="pE" style="color: red"></span><br /><label>Your Query</label>
+                <textarea rows="5" cols="60" name="Message" id="Message" placeholder="Your Query"></textarea>
+                <button type="button" onclick="verifySubmit()">Submit</button>
+                <button id="reset" type="reset" value="Reset">Reset</button>
+            </form>
+        </div>
+    </div>
