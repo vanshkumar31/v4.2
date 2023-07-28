@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
     <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     <script src="script.js"></script>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Shopping site</title>
 </head>
 
-<body>
+<body><div id="up"></div>
     <nav>
         <ul class="nav_left">
             <li>
@@ -35,8 +36,10 @@
             </li>
         </ul>
         <ul class="nav_right">
-            <li onclick="openNav()" style="cursor: pointer;">Cart
-                <!-- icon of cart -->
+            <li>
+                <a href="cart.html">
+                    My Order
+                </a>
             </li>
 
             <li>
@@ -44,7 +47,7 @@
                 <!--sign up icon-->
             </li>
 
-            <li style="cursor: pointer;">Mode
+            <li style="cursor: pointer; color: #F2DEBA;">Mode
                 <!--icon of mode(dark and light)-->
             </li>
 
@@ -108,15 +111,9 @@
 
         </div>
     </main>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div id="cart-modal" style="display: block;">
-            <h1>Cart</h1>
-            <ul id="cart-items"></ul>
-        </div>
     </div>
     <h1 class="center">Testimonials</h1>
-    <small style="display: block;" class="center">user review</small>
+    <h3 style="display: block;" class="center">user review</h3>
     <hr>
     <section>
 
@@ -158,13 +155,50 @@
 
             </div>
         </div>
-    </section><br><section>
-    <footer>
-        <h1 class="center">Follow us</h1>
-       
-        <!-- fb,insta,youtube -->
-    </footer></section>
-</body>
+    </section><br>
 
+
+    <footer>
+        <h1 class="center noFloat">Follow us</h1>
+        <div class="footer">
+            <div id="icon">
+                <div class="tooltip">
+                    <img src="resource/img/png/fb_c.png" alt="fb">
+                    <!-- <img  src="resource/img/png/fb_c.png" alt="fb"> -->
+                    <span class="tooltiptext fb">Facebook</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/insta_c.png" alt="insta">
+                    <span class="tooltiptext insta">Instagram</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/whatsapp_c.png" alt="whatsapp">
+                    <span class="tooltiptext whatsapp">Whatsapp</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/linkedin_c.png" alt="Linkdin">
+                    <span class="tooltiptext linkd">LinkdIn</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/yt_c.png" alt="yt">
+                    <span class="tooltiptext youtube">youtube</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/twitter_c.png" alt="twitter">
+                    <span class="tooltiptext x">Twitter</span>
+                </div>
+
+            </div>
+            <small>Copyright © 2023 | All Rights Reserved</small>
+            <br><small>web designer: <a href="potfolio.html">vansh Kumar</a></small>
+
+
+            <button type="button"><a href="#up"><img src="resource/img/png/arrow.png" alt="uparrow" ></a></button>
+            <!-- fb,insta,youtube -->
+        </div>
+    </footer>
+
+</body>
+<script>
+
+</script>
 
 </html>
+
+
+<!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->

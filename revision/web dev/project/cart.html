@@ -3,53 +3,162 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <!-- <meta http-equiv="refresh" content="5"> -->
     <script src="script.js"></script>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Product</title>
+    <style>
+        h1 {
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: bisque;
+
+
+        }
+         button#clearCartButton{
+            background-color: crimson;
+                color: whitesmoke;
+        }
+    </style>
 </head>
 
-<body>
-<nav>
-    <ul class="nav_left">
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-        <li>
-            <a href="#product">
-                Product
-            </a>
-        </li>
-        <li>
-            <a href="contact.html">
-                Contact Us
-            </a>
-        <li>
-            <a href="about.html">
-                About Us
-            </a>
-        </li>
-    </ul>
-    <ul class="nav_right">
-        <li><a href="cart.html">Cart</a>
-            <!-- icon of cart -->
-        </li>
+<body onload="cart()">
+    <nav>
+        <ul class="nav_left">
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="menu.html">
+                    menu
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">
+                    Contact Us
+                </a>
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
+        </ul>
+        <ul class="nav_right">
+            <li>
+                <a href="cart.html">
+                    My Order
+                </a>
+            </li>
+    
+            <li>
+                <a href="login.html">Login </a>
+                <!--sign up icon-->
+            </li>
+    
+            <li style="cursor: pointer; color: #F2DEBA;">Mode
+                <!--icon of mode(dark and light)-->
+            </li>
+    
+        </ul>
+    </nav>
+    <div id="up"></div>
+    <div class="cart_background">
+        <h1 class="center">Cart</h1>
+        <div id="cartEmpty">
+            <img class="img" src="resource/img/emptycart.png" alt="empty">
+            <h1>Cart Empty</h1>
 
-        <li>
-            <a href="login.html">Login </a>
-            <!--sign up icon-->
-        </li>
+        </div>
+        <div id="myOrder">
+            <table id="storeList">
+                <thead id="tableHead">
+                    <tr>
+                        <th>S.no</th>
+                        <th>item</th>
+                        <th>Size</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
 
-        <li style="cursor: pointer;">Mode
-            <!--icon of mode(dark and light)-->
-        </li>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
 
-    </ul>
-</nav>
-<div class="cart_background">
-    <h1 class="center">Cart</h1>
-    <table></table>
-</div>
+                </tbody>
+            </table>
+
+            <br>
+
+            <div id="output"></div>
+            <br>
+            <div id="adOption">
+                <button id="clearCartButton">clean Cart</button><br>
+                <input id="isOption" type="checkbox">
+                <label>Advance option</label>
+                <br>
+                <div id="option" style="display: none;">
+                    <input id="isTip" type="checkbox">
+                    <label for="tip">Tip</label>
+                    <input id="tipI" style="display: none;" type="number">
+                    <br>
+                    <input id="isCoupon" type="checkbox">
+                    <label for="Coupon">Coupon</label>
+                    <input id="coupI" style="display: none;" type="text">
+
+                    <br>
+                    <input id="isSplit" type="checkbox">
+                    <label for="Bill split">What to split Bill</label>
+                    <input id="person" min="1" type="number" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+<footer>
+    <h1 class="center noFloat">Follow us</h1>
+    <div class="footer">
+        <div id="icon">
+            <div class="tooltip">
+                <img src="resource/img/png/fb_c.png" alt="fb">
+                <!-- <img  src="resource/img/png/fb_c.png" alt="fb"> -->
+                <span class="tooltiptext fb">Facebook</span>
+            </div>
+            <div class="tooltip"><img src="resource/img/png/insta_c.png" alt="insta">
+                <span class="tooltiptext insta">Instagram</span>
+            </div>
+            <div class="tooltip"><img src="resource/img/png/whatsapp_c.png" alt="whatsapp">
+                <span class="tooltiptext whatsapp">Whatsapp</span>
+            </div>
+            <div class="tooltip"><img src="resource/img/png/linkedin_c.png" alt="Linkdin">
+                <span class="tooltiptext linkd">LinkdIn</span>
+            </div>
+            <div class="tooltip"><img src="resource/img/png/yt_c.png" alt="yt">
+                <span class="tooltiptext youtube">youtube</span>
+            </div>
+            <div class="tooltip"><img src="resource/img/png/twitter_c.png" alt="twitter">
+                <span class="tooltiptext x">Twitter</span>
+            </div>
+
+        </div>
+        <small>Copyright © 2023 | All Rights Reserved</small>
+        <br><small>web designer: <a href="potfolio.html">vansh Kumar</a></small>
+
+
+        <button type="button"><a href="#up"><img src="resource/img/png/arrow.png" alt="uparrow"></a></button>
+        <!-- fb,insta,youtube -->
+    </div>
+</footer>
+</body>
+<script>
+  
+</script>
+
+
+</html>

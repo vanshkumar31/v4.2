@@ -3,52 +3,54 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Contact us</title>
 </head>
 
-<body>
+<body><div id="up"></div>
     <nav>
-        <ul class="nav_left">
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="menu.html">
-                    Menu
-                </a>
-            </li>
-            <li>
-                <a href="contact.html">
-                    Contact Us
-                </a>
-            <li>
-                <a href="about.html">
-                    About Us
-                </a>
-            </li>
-        </ul>
-        <ul class="nav_right">
-            <li><a href="cart.html">Cart</a>
-                <!-- icon of cart -->
-            </li>
+    <ul class="nav_left">
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="menu.html">
+                menu
+            </a>
+        </li>
+        <li>
+            <a href="contact.html">
+                Contact Us
+            </a>
+        <li>
+            <a href="about.html">
+                About Us
+            </a>
+        </li>
+    </ul>
+    <ul class="nav_right">
+        <li>
+            <a href="cart.html">
+                My Order
+            </a>
+        </li>
 
-            <li>
-                <a href="login.html">Login </a>
-                <!--sign up icon-->
-            </li>
+        <li>
+            <a href="login.html">Login </a>
+            <!--sign up icon-->
+        </li>
 
-            <li style="cursor: pointer;">Mode
-                <!--icon of mode(dark and light)-->
-            </li>
+        <li style="cursor: pointer; color: #F2DEBA;">Mode
+            <!--icon of mode(dark and light)-->
+        </li>
 
-        </ul>
-    </nav>
+    </ul>
+</nav>
     <div class="form_contact">
         <div class="form_style">
             <form name="form" onsubmit="verifyForm()" method="get">
@@ -64,4 +66,38 @@
                 <button id="reset" type="reset" value="Reset">Reset</button>
             </form>
         </div>
-    </div>
+    </div><footer>
+        <h1 class="center noFloat">Follow us</h1>
+        <div class="footer">
+            <div id="icon">
+                <div class="tooltip">
+                    <img src="resource/img/png/fb_c.png" alt="fb">
+                    <!-- <img  src="resource/img/png/fb_c.png" alt="fb"> -->
+                    <span class="tooltiptext fb">Facebook</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/insta_c.png" alt="insta">
+                    <span class="tooltiptext insta">Instagram</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/whatsapp_c.png" alt="whatsapp">
+                    <span class="tooltiptext whatsapp">Whatsapp</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/linkedin_c.png" alt="Linkdin">
+                    <span class="tooltiptext linkd">LinkdIn</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/yt_c.png" alt="yt">
+                    <span class="tooltiptext youtube">youtube</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/twitter_c.png" alt="twitter">
+                    <span class="tooltiptext x">Twitter</span>
+                </div>
+    
+            </div>
+            <small>Copyright © 2023 | All Rights Reserved</small>
+            <br><small>web designer: <a href="potfolio.html">vansh Kumar</a></small>
+    
+    
+            <button type="button"><a href="#up"><img src="resource/img/png/arrow.png" alt="uparrow"></a></button>
+            <!-- fb,insta,youtube -->
+        </div>
+    </footer>
+    </body></html>

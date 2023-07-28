@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=\, initial-scale=1.0"> -->
-    <title>menu try</title>
-    <!-- <link rel="stylesheet" href="G:/v4.2/revision/web dev/project/style.css"> -->
-    <style>
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
+    <script src="script.js"></script>
+    <!-- <style>
         * {
             margin: 0;
             padding: 0;
@@ -96,7 +98,7 @@
 
         table {
             border-collapse: collapse;
-            border-radius: 20px;
+          
             width: 090%;
             margin: auto;
             /* position: absolute; */
@@ -109,9 +111,7 @@
             padding: 8px;
         }
 
-        table:hover() {
-            border-radius: 20px;
-        }
+        
 
         th {
             color: #FAECD6;
@@ -123,15 +123,8 @@
             background-color: #4E6C50;
             color: #F2DEBA;
         }
-        h1{display: block;
-            text-align: center;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            background-color: bisque;
-
-
-        }
-      button {
+      
+     #menu button {
         border: none;
     border-radius: 5px;
     padding: 10px;
@@ -141,57 +134,73 @@
     display: inline-block;
 }
 
-button:hover {
-    background-color: #820000;
-}
 
+    </style> -->
+    <style>
+        h1 {
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: bisque;
+
+
+        }
     </style>
 </head>
 
-<body>
-    <nav>
-        <ul class="nav_left">
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="menu.html">
-                    menu
-                </a>
-            </li>
-            <li>
-                <a href="contact.html">
-                    Contact Us
-                </a>
-            <li>
-                <a href="about.html">
-                    About Us
-                </a>
-            </li>
-        </ul>
-        <ul class="nav_right">
-            <li onclick="openNav()" style="cursor: pointer;">Cart
-                <!-- icon of cart -->
-            </li>
+<body><nav>
+    <ul class="nav_left">
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="menu.html">
+                menu
+            </a>
+        </li>
+        <li>
+            <a href="contact.html">
+                Contact Us
+            </a>
+        <li>
+            <a href="about.html">
+                About Us
+            </a>
+        </li>
+    </ul>
+    <ul class="nav_right">
+        <li>
+            <a href="cart.html">
+                My Order
+            </a>
+        </li>
 
-            <li>
-                <a href="login.html">Login </a>
-                <!--sign up icon-->
-            </li>
+        <li>
+            <a href="login.html">Login </a>
+            <!--sign up icon-->
+        </li>
 
-            <li style="cursor: pointer;">Mode
-                <!--icon of mode(dark and light)-->
-            </li>
+        <li style="cursor: pointer; color: #F2DEBA;">Mode
+            <!--icon of mode(dark and light)-->
+        </li>
 
-        </ul>
-    </nav>
+    </ul>
+</nav><div id="up"></div>
     <h1>Menu</h1>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="cart-modal" style="display: block;">
+            <h1>Cart</h1>
+            <ul id="cart-items"></ul>
+        </div>
+    </div>
     <main>
         <div class="accordion">Pizza</div>
         <div class="panel">
-            <table>
+            <table id="menu">
                 <thead>
                     <tr>
                         <th>S.no</th>
@@ -206,75 +215,84 @@ button:hover {
                         <td>1</td>
                         <td>🍕 Pizza</td>
                         <td>Cheese Pizza</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="1" data-price="110">
+                        <td><button type="button" class="addToCart" item-name="Cheese Pizza" data-size="small"
+                                data-id="1" data-price="110">
                                 110</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="1" data-price="150">
+                        <td><button type="button" class="addToCart" item-name="Cheese Pizza" data-size="large"
+                                data-id="1" data-price="150">
                                 150</button></td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>🍕 Pizza</td>
                         <td>Corn Pizza</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="2" data-price="120">
+                        <td><button type="button" class="addToCart" item-name="Corn Pizza" data-size="small" data-id="2"
+                                data-price="120">
                                 120</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="2" data-price="160">
+                        <td><button type="button" class="addToCart" item-name="Corn Pizza" data-size="large" data-id="2"
+                                data-price="160">
                                 160</button></td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td>🍕 Pizza</td>
                         <td>Tomato Pizza</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="3" data-price="120">
+                        <td><button type="button" class="addToCart" item-name="Tomato Pizza" data-size="small"
+                                data-id="3" data-price="120">
                                 120</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="3" data-price="160">
+                        <td><button type="button" class="addToCart" item-name="Tomato Pizza" data-size="large"
+                                data-id="3" data-price="160">
                                 160</button></td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td>🍕 Pizza</td>
                         <td>Margreta Pizza</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="4" data-price="130">
-                                130</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="4" data-price="170">
-                                170</button></td>
+                        <td><button type="button" class="addToCart" item-name="Margreta Pizza" data-size="small"
+                                data-id="4" data-price="130"> 130</button></td>
+                        <td><button type="button" class="addToCart" item-name="Margreta Pizza" data-size="large"
+                                data-id="4" data-price="170"> 170</button></td>
                     </tr>
                     <tr>
                         <td>5</td>
                         <td>🍕 Pizza</td>
                         <td>Fresh Veggi Pizza</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="5" data-price="140">
-                                140</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="5" data-price="180">
-                                180</button></td>
+                        <td><button type="button" class="addToCart" item-name="Fresh Veggi Pizza" data-size="small"
+                                data-id="5" data-price="140"> 140</button></td>
+                        <td><button type="button" class="addToCart" item-name="Fresh Veggi Pizza" data-size="large"
+                                data-id="5" data-price="180"> 180</button></td>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td>🍕 Pizza</td>
                         <td>Cottage Cheese Pizza</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="6" data-price="150">
-                                150</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="6" data-price="200">
-                                200</button></td>
+                        <td><button type="button" class="addToCart" item-name="Cottage Cheese Pizza" data-size="small"
+                                data-id="6" data-price="150"> 150</button></td>
+                        <td><button type="button" class="addToCart" item-name="Cottage Cheese Pizza" data-size="large"
+                                data-id="6" data-price="200"> 200</button></td>
                     </tr>
                     <tr>
                         <td>7</td>
                         <td>🍕 Pizza</td>
                         <td>Frizza Pizza</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="7" data-price="180">
+                        <td><button type="button" class="addToCart" item-name="Frizza Pizza" data-size="small"
+                                data-id="7" data-price="180">
                                 180</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="7" data-price="220">
+                        <td><button type="button" class="addToCart" item-name="Frizza Pizza" data-size="large"
+                                data-id="7" data-price="220">
                                 220</button></td>
                     </tr>
                     <tr>
                         <td>8</td>
                         <td>🍕 Pizza</td>
                         <td>Tangi Pizza</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="8" data-price="180">
+                        <td><button type="button" class="addToCart" item-name="Tangi Pizza" data-size="small"
+                                data-id="8" data-price="180">
                                 180</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="8" data-price="220">
+                        <td><button type="button" class="addToCart" item-name="Tangi Pizza" data-size="large"
+                                data-id="8" data-price="220">
                                 220</button></td>
                     </tr>
-                  
                 </tbody>
             </table>
         </div>
@@ -295,100 +313,102 @@ button:hover {
                         <td>9</td>
                         <td>🍔 Burger</td>
                         <td>Aloo Tikki Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="9" data-price="30">
-                                30</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="9" data-price="40">
-                                40</button></td>
+                        <td><button type="button" class="addToCart" item-name="Aloo Tikki Burger" data-size="small"
+                                data-id="9" data-price="30"> 30</button></td>
+                        <td><button type="button" class="addToCart" item-name="Aloo Tikki Burger" data-size="large"
+                                data-id="9" data-price="40"> 40</button></td>
                     </tr>
                     <tr>
                         <td>10</td>
                         <td>🍔 Burger</td>
                         <td>Veg Crispy Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="10" data-price="40">
-                                40</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="10" data-price="50">
-                                50</button></td>
+                        <td><button type="button" class="addToCart" item-name="Veg Crispy Burger" data-size="small"
+                                data-id="10" data-price="40"> 40</button></td>
+                        <td><button type="button" class="addToCart" item-name="Veg Crispy Burger" data-size="large"
+                                data-id="10" data-price="50"> 50</button></td>
                     </tr>
                     <tr>
                         <td>11</td>
                         <td>🍔 Burger</td>
                         <td>Butter Disaster Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="11" data-price="50">
-                                50</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="11" data-price="60">
-                                60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Butter Disaster Burger" data-size="small"
+                                data-id="11" data-price="50"> 50</button></td>
+                        <td><button type="button" class="addToCart" item-name="Butter Disaster Burger" data-size="large"
+                                data-id="11" data-price="60"> 60</button></td>
                     </tr>
                     <tr>
                         <td>12</td>
                         <td>🍔 Burger</td>
                         <td>Cheese Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="12" data-price="50">
-                                50</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="12" data-price="60">
-                                60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Cheese Burger" data-size="small"
+                                data-id="12" data-price="50"> 50</button></td>
+                        <td><button type="button" class="addToCart" item-name="Cheese Burger" data-size="large"
+                                data-id="12" data-price="60"> 60</button></td>
                     </tr>
                     <tr>
                         <td>13</td>
                         <td>🍔 Burger</td>
                         <td>Chips Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="13" data-price="60">
+                        <td><button type="button" class="addToCart" item-name="Chips Burger" data-size="small"
+                                data-id="13" data-price="60">
                                 60</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="13" data-price="70">
+                        <td><button type="button" class="addToCart" item-name="Chips Burger" data-size="large"
+                                data-id="13" data-price="70">
                                 70</button></td>
                     </tr>
                     <tr>
                         <td>14</td>
                         <td>🍔 Burger</td>
                         <td>Double Veg Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="14" data-price="60">
-                                60</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="14" data-price="80">
-                                80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Double Veg Burger" data-size="small"
+                                data-id="14" data-price="60"> 60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Double Veg Burger" data-size="large"
+                                data-id="14" data-price="80"> 80</button></td>
                     </tr>
                     <tr>
                         <td>15</td>
                         <td>🍔 Burger</td>
                         <td>Decker Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="15" data-price="70">
-                                70</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="15" data-price="80">
-                                80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Decker Burger" data-size="small"
+                                data-id="15" data-price="70"> 70</button></td>
+                        <td><button type="button" class="addToCart" item-name="Decker Burger" data-size="large"
+                                data-id="15" data-price="80"> 80</button></td>
                     </tr>
                     <tr>
                         <td>16</td>
                         <td>🍔 Burger</td>
                         <td>Paneer Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="16" data-price="80">
-                                80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="16" data-price="100">
-                                100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Paneer Burger" data-size="small"
+                                data-id="16" data-price="80"> 80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Paneer Burger" data-size="large"
+                                data-id="16" data-price="100"> 100</button></td>
                     </tr>
                     <tr>
                         <td>17</td>
                         <td>🍔 Burger</td>
                         <td>Cheese Paneer Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="17" data-price="80">
-                                80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="17" data-price="95">
-                                95</button></td>
+                        <td><button type="button" class="addToCart" item-name="Cheese Paneer Burger" data-size="small"
+                                data-id="17" data-price="80"> 80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Cheese Paneer Burger" data-size="large"
+                                data-id="17" data-price="95"> 95</button></td>
                     </tr>
                     <tr>
                         <td>18</td>
                         <td>🍔 Burger</td>
                         <td>Big Beng Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="18" data-price="90">
-                                90</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="18" data-price="110">
-                                110</button></td>
+                        <td><button type="button" class="addToCart" item-name="Big Beng Burger" data-size="small"
+                                data-id="18" data-price="90"> 90</button></td>
+                        <td><button type="button" class="addToCart" item-name="Big Beng Burger" data-size="large"
+                                data-id="18" data-price="110"> 110</button></td>
                     </tr>
                     <tr>
                         <td>19</td>
                         <td>🍔 Burger</td>
                         <td>God Father Burger</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="19" data-price="110">
-                                110</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="19" data-price="130">
-                                130</button></td>
+                        <td><button type="button" class="addToCart" item-name="God Father Burger" data-size="small"
+                                data-id="19" data-price="110"> 110</button></td>
+                        <td><button type="button" class="addToCart" item-name="God Father Burger" data-size="large"
+                                data-id="19" data-price="130"> 130</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -410,55 +430,58 @@ button:hover {
                         <td>20</td>
                         <td>🍟 Fries</td>
                         <td>Classic Fries</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="20" data-price="40">
-                                40</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="20" data-price="60">
-                                60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Classic Fries" data-size="small"
+                                data-id="20" data-price="40"> 40</button></td>
+                        <td><button type="button" class="addToCart" item-name="Classic Fries" data-size="large"
+                                data-id="20" data-price="60"> 60</button></td>
                     </tr>
                     <tr>
                         <td>21</td>
                         <td>🍟 Fries</td>
                         <td>Peri Peri Fries</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="21" data-price="50">
-                                50</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="21" data-price="70">
-                                70</button></td>
+                        <td><button type="button" class="addToCart" item-name="Peri Peri Fries" data-size="small"
+                                data-id="21" data-price="50"> 50</button></td>
+                        <td><button type="button" class="addToCart" item-name="Peri Peri Fries" data-size="large"
+                                data-id="21" data-price="70"> 70</button></td>
                     </tr>
                     <tr>
                         <td>22</td>
                         <td>🍟 Fries</td>
                         <td>Cheese Fries</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="22" data-price="70">
+                        <td><button type="button" class="addToCart" item-name="Cheese Fries" data-size="small"
+                                data-id="22" data-price="70">
                                 70</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="22" data-price="90">
+                        <td><button type="button" class="addToCart" item-name="Cheese Fries" data-size="large"
+                                data-id="22" data-price="90">
                                 90</button></td>
                     </tr>
                     <tr>
                         <td>23</td>
                         <td>🍟 Fries</td>
                         <td>Peri Peri Cheese Fries</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="23" data-price="80">
-                                80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="23" data-price="100">
-                                100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Peri Peri Cheese Fries" data-size="small"
+                                data-id="23" data-price="80"> 80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Peri Peri Cheese Fries" data-size="large"
+                                data-id="23" data-price="100"> 100</button></td>
                     </tr>
                     <tr>
                         <td>24</td>
                         <td>🍟 Fries</td>
                         <td>Masala Fries</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="24" data-price="80">
+                        <td><button type="button" class="addToCart" item-name="Masala Fries" data-size="small"
+                                data-id="24" data-price="80">
                                 80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="24" data-price="100">
-                                100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Masala Fries" data-size="large"
+                                data-id="24" data-price="100"> 100</button></td>
                     </tr>
                     <tr>
                         <td>25</td>
                         <td>🍟 Fries</td>
                         <td>Chilli Cheese Fries</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="25" data-price="80">
-                                80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="25" data-price="100">
-                                100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Chilli Cheese Fries" data-size="small"
+                                data-id="25" data-price="80"> 80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Chilli Cheese Fries" data-size="large"
+                                data-id="25" data-price="100"> 100</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -480,64 +503,64 @@ button:hover {
                         <td>26</td>
                         <td>🥪 Sandwich</td>
                         <td>Healthy Sandwich</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="26" data-price="40">
-                                40</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="26" data-price="60">
-                                60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Healthy Sandwich" data-size="small"
+                                data-id="26" data-price="40"> 40</button></td>
+                        <td><button type="button" class="addToCart" item-name="Healthy Sandwich" data-size="large"
+                                data-id="26" data-price="60"> 60</button></td>
                     </tr>
                     <tr>
                         <td>27</td>
                         <td>🥪 Sandwich</td>
                         <td>Butter Sandwich</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="27" data-price="50">
-                                50</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="27" data-price="70">
-                                70</button></td>
+                        <td><button type="button" class="addToCart" item-name="Butter Sandwich" data-size="small"
+                                data-id="27" data-price="50"> 50</button></td>
+                        <td><button type="button" class="addToCart" item-name="Butter Sandwich" data-size="large"
+                                data-id="27" data-price="70"> 70</button></td>
                     </tr>
                     <tr>
                         <td>28</td>
                         <td>🥪 Sandwich</td>
                         <td>Aloo Tikki Sandwich</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="28" data-price="60">
-                                60</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="28" data-price="80">
-                                80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Aloo Tikki Sandwich" data-size="small"
+                                data-id="28" data-price="60"> 60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Aloo Tikki Sandwich" data-size="large"
+                                data-id="28" data-price="80"> 80</button></td>
                     </tr>
                     <tr>
                         <td>29</td>
                         <td>🥪 Sandwich</td>
                         <td>Pizza Sandwich</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="29" data-price="80">
-                                80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="29" data-price="100">
-                                100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Pizza Sandwich" data-size="small"
+                                data-id="29" data-price="80"> 80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Pizza Sandwich" data-size="large"
+                                data-id="29" data-price="100"> 100</button></td>
                     </tr>
                     <tr>
                         <td>30</td>
                         <td>🥪 Sandwich</td>
                         <td>Paneer Sandwich</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="30" data-price="80">
-                                80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="30" data-price="100">
-                                100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Paneer Sandwich" data-size="small"
+                                data-id="30" data-price="80"> 80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Paneer Sandwich" data-size="large"
+                                data-id="30" data-price="100"> 100</button></td>
                     </tr>
                     <tr>
                         <td>31</td>
                         <td>🥪 Sandwich</td>
                         <td>Angry Mozzarella Sandwich</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="31" data-price="100">
-                                100</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="31" data-price="120">
-                                120</button></td>
+                        <td><button type="button" class="addToCart" item-name="Angry Mozzarella Sandwich"
+                                data-size="small" data-id="31" data-price="100"> 100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Angry Mozzarella Sandwich"
+                                data-size="large" data-id="31" data-price="120"> 120</button></td>
                     </tr>
                     <tr>
                         <td>32</td>
                         <td>🥪 Sandwich</td>
                         <td>Protein Sandwich</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="32" data-price="100">
-                                100</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="32" data-price="120">
-                                120</button></td>
+                        <td><button type="button" class="addToCart" item-name="Protein Sandwich" data-size="small"
+                                data-id="32" data-price="100"> 100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Protein Sandwich" data-size="large"
+                                data-id="32" data-price="120"> 120</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -555,59 +578,64 @@ button:hover {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>33</td>
-                        <td>🌯 Wrap</td>
-                        <td>Veg Wrap</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="33" data-price="40">
-                                40</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="33" data-price="60">
-                                60</button></td>
+                    <td>33</td>
+                    <td>🌯 Wrap</td>
+                    <td>Veg Wrap</td>
+                    <td><button type="button" class="addToCart" item-name="Veg Wrap" data-size="small" data-id="33"
+                            data-price="40">
+                            40</button></td>
+                    <td><button type="button" class="addToCart" item-name="Veg Wrap" data-size="large" data-id="33"
+                            data-price="60">
+                            60</button></td>
                     </tr>
                     <tr>
                         <td>34</td>
                         <td>🌯 Wrap</td>
                         <td>Cheese Wrap</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="34" data-price="55">
+                        <td><button type="button" class="addToCart" item-name="Cheese Wrap" data-size="small"
+                                data-id="34" data-price="55">
                                 55</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="34" data-price="75">
+                        <td><button type="button" class="addToCart" item-name="Cheese Wrap" data-size="large"
+                                data-id="34" data-price="75">
                                 75</button></td>
                     </tr>
                     <tr>
                         <td>35</td>
                         <td>🌯 Wrap</td>
                         <td>Paneer Wrap</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="35" data-price="60">
+                        <td><button type="button" class="addToCart" item-name="Paneer Wrap" data-size="small"
+                                data-id="35" data-price="60">
                                 60</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="35" data-price="80">
+                        <td><button type="button" class="addToCart" item-name="Paneer Wrap" data-size="large"
+                                data-id="35" data-price="80">
                                 80</button></td>
                     </tr>
                     <tr>
                         <td>36</td>
                         <td>🌯 Wrap</td>
                         <td>Cheese Paneer Wrap</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="36" data-price="75">
-                                75</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="36" data-price="95">
-                                95</button></td>
+                        <td><button type="button" class="addToCart" item-name="Cheese Paneer Wrap" data-size="small"
+                                data-id="36" data-price="75"> 75</button></td>
+                        <td><button type="button" class="addToCart" item-name="Cheese Paneer Wrap" data-size="large"
+                                data-id="36" data-price="95"> 95</button></td>
                     </tr>
                     <tr>
                         <td>37</td>
                         <td>🌯 Wrap</td>
                         <td>God Father Wrap</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="37" data-price="85">
-                                85</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="37" data-price="110">
-                                110</button></td>
+                        <td><button type="button" class="addToCart" item-name="God Father Wrap" data-size="small"
+                                data-id="37" data-price="85"> 85</button></td>
+                        <td><button type="button" class="addToCart" item-name="God Father Wrap" data-size="large"
+                                data-id="37" data-price="110"> 110</button></td>
                     </tr>
                     <tr>
                         <td>38</td>
                         <td>🌯 Wrap</td>
                         <td>Double Deluxe Wrap</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="38" data-price="80">
-                                80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="38" data-price="120">
-                                120</button></td>
+                        <td><button type="button" class="addToCart" item-name="Double Deluxe Wrap" data-size="small"
+                                data-id="38" data-price="80"> 80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Double Deluxe Wrap" data-size="large"
+                                data-id="38" data-price="120"> 120</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -629,37 +657,44 @@ button:hover {
                         <td>39</td>
                         <td>🍝 Pasta</td>
                         <td>Red Pasta</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="39" data-price="80">
+                        <td><button type="button" class="addToCart" item-name="Red Pasta" data-size="small" data-id="39"
+                                data-price="80">
                                 80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="39" data-price="120">
+                        <td><button type="button" class="addToCart" item-name="Red Pasta" data-size="large" data-id="39"
+                                data-price="120">
                                 120</button></td>
                     </tr>
                     <tr>
                         <td>40</td>
                         <td>🍝 Pasta</td>
                         <td>White Pasta</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="40" data-price="90">
+                        <td><button type="button" class="addToCart" item-name="White Pasta" data-size="small"
+                                data-id="40" data-price="90">
                                 90</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="40" data-price="130">
+                        <td><button type="button" class="addToCart" item-name="White Pasta" data-size="large"
+                                data-id="40" data-price="130">
                                 130</button></td>
                     </tr>
                     <tr>
                         <td>41</td>
                         <td>🍝 Pasta</td>
                         <td>50-50 Pasta</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="41" data-price="80">
+                        <td><button type="button" class="addToCart" item-name="50-50 Pasta" data-size="small"
+                                data-id="41" data-price="80">
                                 80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="41" data-price="140">
+                        <td><button type="button" class="addToCart" item-name="50-50 Pasta" data-size="large"
+                                data-id="41" data-price="140">
                                 140</button></td>
                     </tr>
                     <tr>
                         <td>42</td>
                         <td>🍝 Pasta</td>
                         <td>Indian Pasta</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="42" data-price="80">
+                        <td><button type="button" class="addToCart" item-name="Indian Pasta" data-size="small"
+                                data-id="42" data-price="80">
                                 80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="42" data-price="140">
-                                140</button></td>
+                        <td><button type="button" class="addToCart" item-name="Indian Pasta" data-size="large"
+                                data-id="42" data-price="140"> 140</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -681,11 +716,12 @@ button:hover {
                         <td>43</td>
                         <td>🍜 Noodles</td>
                         <td>Masala Cheese Noodles</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="43" data-price="40">
-                                40</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="43" data-price="60">
-                                60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Masala Cheese Noodles" data-size="small"
+                                data-id="43" data-price="40"> 40</button></td>
+                        <td><button type="button" class="addToCart" item-name="Masala Cheese Noodles" data-size="large"
+                                data-id="43" data-price="60"> 60</button></td>
                     </tr>
+                    <tr>
                 </tbody>
             </table>
         </div>
@@ -702,41 +738,42 @@ button:hover {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>44</td>
-                        <td>🥗 Salad</td>
-                        <td>Classic Salad</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="44" data-price="80">
-                                80</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="44" data-price="120">
-                                120</button></td>
+                    <td>44</td>
+                    <td>🥗 Salad</td>
+                    <td>Classic Salad</td>
+                    <td><button type="button" class="addToCart" item-name="Classic Salad" data-size="small" data-id="44"
+                            data-price="80">
+                            80</button></td>
+                    <td><button type="button" class="addToCart" item-name="Classic Salad" data-size="large" data-id="44"
+                            data-price="120">
+                            120</button></td>
                     </tr>
                     <tr>
                         <td>45</td>
                         <td>🥗 Salad</td>
                         <td>B.B.Q. Paneer Salad</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="45" data-price="90">
-                                90</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="45" data-price="140">
-                                140</button></td>
+                        <td><button type="button" class="addToCart" item-name="B.B.Q. Paneer Salad" data-size="small"
+                                data-id="45" data-price="90"> 90</button></td>
+                        <td><button type="button" class="addToCart" item-name="B.B.Q. Paneer Salad" data-size="large"
+                                data-id="45" data-price="140"> 140</button></td>
                     </tr>
                     <tr>
                         <td>46</td>
                         <td>🥗 Salad</td>
                         <td>Grilled Paneer Salad</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="46" data-price="100">
-                                100</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="46" data-price="150">
-                                150</button></td>
+                        <td><button type="button" class="addToCart" item-name="Grilled Paneer Salad" data-size="small"
+                                data-id="46" data-price="100"> 100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Grilled Paneer Salad" data-size="large"
+                                data-id="46" data-price="150"> 150</button></td>
                     </tr>
                     <tr>
                         <td>47</td>
                         <td>🥗 Salad</td>
                         <td>Tandoori Paneer Salad</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="47" data-price="100">
-                                100</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="47" data-price="160">
-                                160</button></td>
+                        <td><button type="button" class="addToCart" item-name="Tandoori Paneer Salad" data-size="small"
+                                data-id="47" data-price="100"> 100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Tandoori Paneer Salad" data-size="large"
+                                data-id="47" data-price="160"> 160</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -758,108 +795,117 @@ button:hover {
                         <td>48</td>
                         <td>🍺 Shake</td>
                         <td>Cold Coffee</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="48" data-price="40">
+                        <td><button type="button" class="addToCart" item-name="Cold Coffee" data-size="small"
+                                data-id="48" data-price="40">
                                 40</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="48" data-price="60">
+                        <td><button type="button" class="addToCart" item-name="Cold Coffee" data-size="large"
+                                data-id="48" data-price="60">
                                 60</button></td>
                     </tr>
                     <tr>
                         <td>49</td>
                         <td>🍺 Shake</td>
                         <td>Vanila Shake</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="49" data-price="50">
+                        <td><button type="button" class="addToCart" item-name="Vanila Shake" data-size="small"
+                                data-id="49" data-price="50">
                                 50</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="49" data-price="70">
+                        <td><button type="button" class="addToCart" item-name="Vanila Shake" data-size="large"
+                                data-id="49" data-price="70">
                                 70</button></td>
                     </tr>
                     <tr>
                         <td>50</td>
                         <td>🍺 Shake</td>
                         <td>Strawberry Shake</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="50" data-price="50">
-                                50</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="50" data-price="70">
-                                70</button></td>
+                        <td><button type="button" class="addToCart" item-name="Strawberry Shake" data-size="small"
+                                data-id="50" data-price="50"> 50</button></td>
+                        <td><button type="button" class="addToCart" item-name="Strawberry Shake" data-size="large"
+                                data-id="50" data-price="70"> 70</button></td>
                     </tr>
                     <tr>
                         <td>51</td>
                         <td>🍺 Shake</td>
                         <td>Butter Scotch</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="51" data-price="60">
-                                60</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="51" data-price="80">
-                                80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Butter Scotch" data-size="small"
+                                data-id="51" data-price="60"> 60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Butter Scotch" data-size="large"
+                                data-id="51" data-price="80"> 80</button></td>
                     </tr>
                     <tr>
                         <td>52</td>
                         <td>🍺 Shake</td>
                         <td>Black Current</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="52" data-price="60">
-                                60</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="52" data-price="80">
-                                80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Black Current" data-size="small"
+                                data-id="52" data-price="60"> 60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Black Current" data-size="large"
+                                data-id="52" data-price="80"> 80</button></td>
                     </tr>
                     <tr>
                         <td>53</td>
                         <td>🍺 Shake</td>
                         <td>Oreo Shake</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="53" data-price="50">
+                        <td><button type="button" class="addToCart" item-name="Oreo Shake" data-size="small"
+                                data-id="53" data-price="50">
                                 50</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="53" data-price="80">
+                        <td><button type="button" class="addToCart" item-name="Oreo Shake" data-size="large"
+                                data-id="53" data-price="80">
                                 80</button></td>
                     </tr>
                     <tr>
                         <td>54</td>
                         <td>🍺 Shake</td>
                         <td>Chocolate Shake</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="54" data-price="50">
-                                50</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="54" data-price="80">
-                                80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Chocolate Shake" data-size="small"
+                                data-id="54" data-price="50"> 50</button></td>
+                        <td><button type="button" class="addToCart" item-name="Chocolate Shake" data-size="large"
+                                data-id="54" data-price="80"> 80</button></td>
                     </tr>
                     <tr>
                         <td>55</td>
                         <td>🍺 Shake</td>
                         <td>Kit Kat Shake</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="55" data-price="60">
-                                60</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="55" data-price="90">
-                                90</button></td>
+                        <td><button type="button" class="addToCart" item-name="Kit Kat Shake" data-size="small"
+                                data-id="55" data-price="60"> 60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Kit Kat Shake" data-size="large"
+                                data-id="55" data-price="90"> 90</button></td>
                     </tr>
                     <tr>
                         <td>56</td>
                         <td>🍺 Shake</td>
                         <td>Coffee Chocolate Shake</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="56" data-price="60">
-                                60</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="56" data-price="100">
-                                100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Coffee Chocolate Shake" data-size="small"
+                                data-id="56" data-price="60"> 60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Coffee Chocolate Shake" data-size="large"
+                                data-id="56" data-price="100"> 100</button></td>
                     </tr>
                     <tr>
                         <td>57</td>
                         <td>🍺 Shake</td>
                         <td>Carmal Shake</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="57" data-price="60">
+                        <td><button type="button" class="addToCart" item-name="Carmal Shake" data-size="small"
+                                data-id="57" data-price="60">
                                 60</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="57" data-price="100">
-                                100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Carmal Shake" data-size="large"
+                                data-id="57" data-price="100"> 100</button></td>
                     </tr>
                     <tr>
                         <td>58</td>
                         <td>🍺 Shake</td>
                         <td>Coffee Carmal</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="58" data-price="70">
-                                70</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="58" data-price="110">
-                                110</button></td>
+                        <td><button type="button" class="addToCart" item-name="Coffee Carmal" data-size="small"
+                                data-id="58" data-price="70"> 70</button></td>
+                        <td><button type="button" class="addToCart" item-name="Coffee Carmal" data-size="large"
+                                data-id="58" data-price="110"> 110</button></td>
                     </tr>
                     <tr>
                         <td>59</td>
                         <td>🍺 Shake</td>
                         <td>Coffee Oreo</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="59" data-price="70">
+                        <td><button type="button" class="addToCart" item-name="Coffee Oreo" data-size="small"
+                                data-id="59" data-price="70">
                                 70</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="59" data-price="110">
+                        <td><button type="button" class="addToCart" item-name="Coffee Oreo" data-size="large"
+                                data-id="59" data-price="110">
                                 110</button></td>
                     </tr>
                 </tbody>
@@ -882,63 +928,66 @@ button:hover {
                         <td>60</td>
                         <td>🍾 Beverages</td>
                         <td>Pepsi</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="60" data-price="20">
+                        <td><button type="button" class="addToCart" item-name="Pepsi" data-size="small" data-id="60"
+                                data-price="20">
                                 20</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="60" data-price="40">
+                        <td><button type="button" class="addToCart" item-name="Pepsi" data-size="large" data-id="60"
+                                data-price="40">
                                 40</button></td>
                     </tr>
                     <tr>
                         <td>61</td>
                         <td>🍾 Beverages</td>
                         <td>Sprite</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="61" data-price="20">
+                        <td><button type="button" class="addToCart" item-name="Sprite" data-size="small" data-id="61"
+                                data-price="20">
                                 20</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="61" data-price="40">
+                        <td><button type="button" class="addToCart" item-name="Sprite" data-size="large" data-id="61"
+                                data-price="40">
                                 40</button></td>
                     </tr>
                     <tr>
                         <td>62</td>
                         <td>🍾 Beverages</td>
                         <td>Slice</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="62" data-price="20">
+                        <td><button type="button" class="addToCart" item-name="Slice" data-size="small" data-id="62"
+                                data-price="20">
                                 20</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="62" data-price="40">
+                        <td><button type="button" class="addToCart" item-name="Slice" data-size="large" data-id="62"
+                                data-price="40">
                                 40</button></td>
                     </tr>
                     <tr>
                         <td>63</td>
                         <td>🍾 Beverages</td>
                         <td>Dew</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="63" data-price="20">
+                        <td><button type="button" class="addToCart" item-name="Dew" data-size="small" data-id="63"
+                                data-price="20">
                                 20</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="63" data-price="40">
+                        <td><button type="button" class="addToCart" item-name="Dew" data-size="large" data-id="63"
+                                data-price="40">
                                 40</button></td>
                     </tr>
                     <tr>
                         <td>64</td>
                         <td>🍾 Beverages</td>
                         <td>Water</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="64" data-price="20">
+                        <td><button type="button" class="addToCart" item-name="Water" data-size="small" data-id="64"
+                                data-price="20">
                                 20</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="64" data-price="30">
+                        <td><button type="button" class="addToCart" item-name="Water" data-size="large" data-id="64"
+                                data-price="30">
                                 30</button></td>
                     </tr>
                     <tr>
                         <td>65</td>
                         <td>🍾 Beverages</td>
                         <td>Soda</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="65" data-price="10">
+                        <td><button type="button" class="addToCart" item-name="Soda" data-size="small" data-id="65"
+                                data-price="10">
                                 10</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="65" data-price="20">
-                                20</button></td>
-                    </tr>
-                    <tr>
-                        <td>66</td>
-                        <td>☕ Tea</td>
-                        <td>Simple Tea</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="66" data-price="10">
-                                10</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="66" data-price="20">
+                        <td><button type="button" class="addToCart" item-name="Soda" data-size="large" data-id="65"
+                                data-price="20">
                                 20</button></td>
                     </tr>
                 </tbody>
@@ -958,12 +1007,25 @@ button:hover {
                 </thead>
                 <tbody>
                     <tr>
+                        <td>66</td>
+                        <td>☕ Tea</td>
+                        <td>Simple Tea</td>
+                        <td><button type="button" class="addToCart" item-name="Simple Tea" data-size="small"
+                                data-id="66" data-price="10">
+                                10</button></td>
+                        <td><button type="button" class="addToCart" item-name="Simple Tea" data-size="large"
+                                data-id="66" data-price="20">
+                                20</button></td>
+                    </tr>
+                    <tr>
                         <td>67</td>
                         <td>☕ Tea</td>
                         <td>Masala Tea</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="67" data-price="20">
+                        <td><button type="button" class="addToCart" item-name="Masala Tea" data-size="small"
+                                data-id="67" data-price="20">
                                 20</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="67" data-price="30">
+                        <td><button type="button" class="addToCart" item-name="Masala Tea" data-size="large"
+                                data-id="67" data-price="30">
                                 30</button></td>
                     </tr>
                 </tbody>
@@ -986,32 +1048,66 @@ button:hover {
                         <td>68</td>
                         <td>🍨 Ice Cream</td>
                         <td>Vanilla Ice Cream</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="68" data-price="40">
-                                40</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="68" data-price="60">
-                                60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Vanilla Ice Cream" data-size="small"
+                                data-id="68" data-price="40"> 40</button></td>
+                        <td><button type="button" class="addToCart" item-name="Vanilla Ice Cream" data-size="large"
+                                data-id="68" data-price="60"> 60</button></td>
                     </tr>
                     <tr>
                         <td>69</td>
                         <td>🍨 Ice Cream</td>
                         <td>Strawberry Ice Cream</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="69" data-price="50">
-                                50</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="69" data-price="80">
-                                80</button></td>
+                        <td><button type="button" class="addToCart" item-name="Strawberry Ice Cream" data-size="small"
+                                data-id="69" data-price="50"> 50</button></td>
+                        <td><button type="button" class="addToCart" item-name="Strawberry Ice Cream" data-size="large"
+                                data-id="69" data-price="80"> 80</button></td>
                     </tr>
                     <tr>
                         <td>70</td>
                         <td>🍨 Ice Cream</td>
                         <td>Chocolate Ice Cream</td>
-                        <td><button type="button" class="addToCart" data-size="small" data-id="70" data-price="60">
-                                60</button></td>
-                        <td><button type="button" class="addToCart" data-size="large" data-id="70" data-price="100">
-                                100</button></td>
+                        <td><button type="button" class="addToCart" item-name="Chocolate Ice Cream" data-size="small"
+                                data-id="70" data-price="60"> 60</button></td>
+                        <td><button type="button" class="addToCart" item-name="Chocolate Ice Cream" data-size="large"
+                                data-id="70" data-price="100"> 100</button></td>
                     </tr>
                 </tbody>
             </table>
     </main>
+    <footer>
+        <h1 class="center noFloat">Follow us</h1>
+        <div class="footer">
+            <div id="icon">
+                <div class="tooltip">
+                    <img src="resource/img/png/fb_c.png" alt="fb">
+                    <!-- <img  src="resource/img/png/fb_c.png" alt="fb"> -->
+                    <span class="tooltiptext fb">Facebook</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/insta_c.png" alt="insta">
+                    <span class="tooltiptext insta">Instagram</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/whatsapp_c.png" alt="whatsapp">
+                    <span class="tooltiptext whatsapp">Whatsapp</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/linkedin_c.png" alt="Linkdin">
+                    <span class="tooltiptext linkd">LinkdIn</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/yt_c.png" alt="yt">
+                    <span class="tooltiptext youtube">youtube</span>
+                </div>
+                <div class="tooltip"><img src="resource/img/png/twitter_c.png" alt="twitter">
+                    <span class="tooltiptext x">Twitter</span>
+                </div>
+    
+            </div>
+            <small>Copyright © 2023 | All Rights Reserved</small>
+            <br><small>web designer: <a href="potfolio.html">vansh Kumar</a></small>
+    
+    
+            <button type="button"><a href="#up"><img src="resource/img/png/arrow.png" alt="uparrow"></a></button>
+            <!-- fb,insta,youtube -->
+        </div>
+    </footer>
 </body>
 <script>
 
@@ -1029,26 +1125,23 @@ button:hover {
             }
         });
     }
+
+
     document.querySelector('main').addEventListener('click', function (event) {
         var target = event.target;
-
-        // Check if the clicked element has the class "addToCart"
         if (target.classList.contains('addToCart')) {
-            // Get the data attributes from the clicked button
             var orderId = target.getAttribute('data-id');
             var size = target.getAttribute('data-size');
+            var name = target.getAttribute('item-name');
             var price = target.getAttribute('data-price');
-
-            // Call your addToCart function passing the relevant data
-            addToCart(orderId, size, price);
+            addToCart(orderId, size, price, name);
+            openNav()
+            setTimeout(closeNav, 3000)
         }
     });
 
-    // Example addToCart function, replace it with your actual implementation
-    function addToCart(orderId, size, price) {
-        console.log("Adding to cart - Order ID: " + orderId + ", Size: " + size + ", Price: " + price);
-        // Implement your logic to add the item to the cart here
-    }
+
+
 </script>
 
 </html>

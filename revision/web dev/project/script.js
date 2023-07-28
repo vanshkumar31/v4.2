@@ -1,6 +1,10 @@
 let slideIndex = 1;
+let y = 0; let a; var bill = 0;
 showSlides(slideIndex);
 
+var acc = document.getElementsByClassName("accordion");
+
+var i;
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
@@ -10,7 +14,7 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-   
+
     let slides = document.getElementsByClassName("myslide");
 
     if (n > slides.length) {
@@ -23,7 +27,7 @@ function showSlides(n) {
         slides[i].style.display = "none";
     }
 
-    slides[slideIndex - 1].style.display= "block";
+    slides[slideIndex - 1].style.display = "block";
 
 }
 function showPassword() {
@@ -32,8 +36,8 @@ function showPassword() {
 function hidePassword() {
     document.getElementById("password").type = "password";
 }
-function verifySubmit(){
-   
+function verifySubmit() {
+
     let Email = document.forms["login_Form"]["email"].value;
     let Password = document.forms["login_Form"]["password"].value;
 
@@ -42,10 +46,10 @@ function verifySubmit(){
             "Email field should not be empty ";
     } else if (Email.indexOf("@") < 0) {
         document.getElementById("eE").innerHTML = "Email should contain @";
-    } 
+    }
     else {
         document.getElementById("eE").innerHTML = "";
-       }
+    }
     if (Password == "") {
         document.getElementById("passE").innerHTML =
             "Password field should not be empty ";
@@ -55,8 +59,8 @@ function verifySubmit(){
     }
 }
 function verifyForm() {
-   
-  
+
+
     var Name = document.forms["form"]["name"].value;
     var Email = document.forms["form"]["email"].value;
     var Numb = document.forms["form"]["numb"].value;
@@ -145,69 +149,171 @@ function verifyForm() {
         }
     }
 }
-// ------------------------------------------------------------------------------
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+function cart() {
+    var table = document.getElementById("storeList").getElementsByTagName('tbody')[0];
+    document.getElementById("isOption").oninput = function () { option() };
+    document.getElementById("isTip").oninput = function () { giveTip() };
+    document.getElementById("isCoupon").oninput = function () { coupon() };
+    document.getElementById("isSplit").oninput = function () { split() }; clearCartButton.addEventListener('click', clearCartHandler);
+    document.getElementById('tbody').innerHTML = '';
+
+    bill = 0;
+
+    var menucart = JSON.parse(localStorage.getItem('cart')) || [];
+    s = 1;
+    menucart.forEach((item) => {
+
+        var newRow = table.insertRow(table.length);
+        cell1 = newRow.insertCell(0);
+        cell1.innerHTML = s++;
+        cell2 = newRow.insertCell(1);
+        cell2.innerHTML = item.name;
+        cell3 = newRow.insertCell(2);
+        cell3.innerHTML = item.size;
+        cell4 = newRow.insertCell(3);
+        cell4.innerHTML = 1;
+        cell5 = newRow.insertCell(4);
+        cell5.innerHTML = item.price;
+        cell6 = newRow.insertCell(5);
+        cell6.innerHTML = item.price;
+        bill = Number(item.price) + bill;
+        a = Number(bill);
+    });
+    y = document.querySelectorAll("tbody tr").length;
+    document.getElementById("output").innerHTML = `Total Item:<b>${y} </b>\x20        Total Bill:<b>${bill}</b>`;
+    if (y == 0) {
+
+        document.getElementById("myOrder").style.display = "none";
+        document.getElementById("cartEmpty").style.display = "block";
+    } else {
+        document.getElementById("cartEmpty").style.display = "none";
+        document.getElementById("myOrder").style.display = "block";
+
+    }
+};
+a = Number(bill);
+function option() {
+    const x = document.getElementById("option");
+
+    if (x.style.display === "block") {
+        x.style.display = "none"; bill = a;
+        document.getElementById("output").innerHTML = `Total Item:<b>${y} </b>\x20        Total Bill:<b>${bill}</b>`;
+
+
+    } else {
+        x.style.display = "block";
+    }
+}
+function giveTip() {
+    const tip = document.getElementById("tipI");
+
+    if (tip.style.display === "inline-block") {
+        tip.style.display = "none";
+        document.getElementById("output").innerHTML = `Total Item:<b>${y} </b>\x20        Total Bill:<b>${Number(bill)}</b>`;
+
+    } else {
+        tip.style.display = "inline-block";
+
+        tip.oninput = function () {
+            let value = tip.value;
+            value = value < 0 ? 0 : tip.value;
+            bill = a + Number(tip.value);
+            console.log();
+            document.getElementById("output").innerHTML = `Total Item:<b>${y} </b>\x20        Total Bill:<b>${Number(bill)}</b>`
+        };
+
+    }
+
+
+};
+function coupon() {
+    const x = document.getElementById("coupI");
+
+    if (x.style.display === "inline-block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "inline-block";
+
+    }
+}
+function split() {
+    const x = document.getElementById("person");
+
+    if (x.style.display === "inline-block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "inline-block";
+
+        x.oninput = function () {
+            let value = x.value;
+            value = value < 1 ? 1 : x.value;
+            let newbill = bill / value;
+            console.log(newbill);
+            document.getElementById("output").innerHTML = `Total Item:<b>${y} </b>\x20        Total Bill:<b>${bill}</b>
+                <br>Per person:<b>${newbill}</b>`
+        };
+    }
+
+}
+
+function clearCartHandler() {
+
+    localStorage.removeItem('cart');
+    document.getElementById('tbody').innerHTML = '';
+    cart();
+}
+
+function addToCart(orderId, size, price, name) {
+    console.log("Adding to cart - Order ID: " + orderId + ", Item: " + name + ", Size: " + size + ", Price: " + price);
+    const product = {
+        orderId: orderId,
+        size: size,
+        price: price,
+        name: name
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProduct = cart.find(function (item) {
+
+        return item.orderId === orderId && item.price === price;
+    });
+
+    if (!existingProduct) {
+        cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+}
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
-}
+    const cartItems = document.getElementById('cart-items');
+    cartItems.style.display="block";
+    cartItems.innerHTML = " ";
+    const menucart = JSON.parse(localStorage.getItem('cart')) || [];
+    menucart.forEach((item) => {
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-
-// -------------------------------------------------------------------------
-
-// Add to Cart functionality
-const addToCartButtons = document.querySelectorAll('.add-to-cart');
-const cartItems = document.getElementById('cart-items');
-
-function addToCartHandler() {
-    console.log("somethig");
-    // const button = this;
-    // const productId = button.dataset.productId;
-    // const product = {
-    //     id: productId,
-    //     name: button.parentElement.querySelector('h3').textContent,
-    //     price: button.parentElement.querySelector('p').textContent
-    // };
-
-    // let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    // const existingProduct = cart.find(function (item) {
-    //     return item.id === productId;
-    // });
-
-    // if (!existingProduct) {
-    //     cart.push(product);
-    // }
-
-    // localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-addToCartButtons.forEach(function (button) {
-    button.addEventListener('click', addToCartHandler);
-    console.log("ohhhh");
-});
-
-
-// Show Cart functionality
-const cartModal = document.getElementById('cart-modal');
-const cartButton = document.createElement('button');
-cartButton.textContent = 'View Cart';
-cartButton.addEventListener('click', () => {
-    cartItems.innerHTML = ''; // Clear the cart items before re-populating
-
-    // Get the cart items from local storage
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Populate the cart items in the modal
-    cart.forEach((item) => {
+        console.log(item);
         const li = document.createElement('li');
         li.textContent = `${item.name} - ${item.price}`;
         cartItems.appendChild(li);
     });
+}
 
-    // Show the cart modal
-    cartModal.style.display = 'block';
-});
+function closeNav() {
+    document.getElementById('cart-items').style.display = "none"
+    document.getElementById("mySidenav").style.width = "0";
 
-// Append the cart button to the body
-document.body.appendChild(cartButton);
+}

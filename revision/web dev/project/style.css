@@ -15,9 +15,9 @@
 
 }
 
- 
 
-nav a {
+
+a {
 
     color: #F2DEBA;
 
@@ -34,7 +34,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1;
- 
+
 }
 
 .nav_left li {
@@ -88,14 +88,21 @@ header a {
     min-height: 100px;
     transition: linear 1s;
 }
+
 .column {
+
     float: left;
     width: 35%;
     padding: 8px;
     margin: 10px;
     background-color: grey;
 }
-.test{
+
+.noFloat {
+    clear: both;
+}
+
+.test {
     display: block;
 }
 
@@ -137,7 +144,8 @@ form label {
 
 }
 
-textarea,form input {
+textarea,
+form input {
     margin-bottom: 10px;
     margin-top: 5px;
     width: 85%;
@@ -149,7 +157,7 @@ textarea,form input {
 }
 
 .form_style {
-       width: 400px;
+    width: 400px;
     border-radius: 12px;
     background-color: #f2f2f2;
     padding: 20px;
@@ -224,24 +232,34 @@ table {
     /* position: absolute; */
 }
 
-thead {
-    height: 150px;
-    position: sticky;
-    top: 0;
-}
-
 td,
 th {
-    /* border: 1px solid #1b1a1a; */
+
     text-align: center;
     padding: 8px;
 }
 
-th,
-tr:nth-child(even) {
+th {
+    color: #FAECD6;
+    background-color: #820000;
+
+}
+
+tr:nth-child(odd) {
     background-color: #4E6C50;
     color: #F2DEBA;
 }
+
+main table button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: crimson;
+    color: #F2DEBA;
+    display: inline-block;
+}
+
 /* ---------------------------------------------- */
 .sidenav {
     height: 100%;
@@ -250,10 +268,16 @@ tr:nth-child(even) {
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: #c4bfbf;
+    background-color: white;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: width 0.5s;
     padding-top: 60px;
+}
+
+#cart-items li {
+    padding: 5px;
+    margin-left: 15%;
+    list-style-type: decimal-leading-zero;
 }
 
 .sidenav a {
@@ -286,6 +310,7 @@ tr:nth-child(even) {
         font-size: 18px;
     }
 }
+
 /* ---------------------------------- */
 .accordion {
     border-radius: 7px;
@@ -326,4 +351,177 @@ div.accordion:nth-child(3n-2) {
     overflow: hidden;
 
 
+}
+
+#output {
+
+    display: block;
+    width: 30%;
+    padding: 15px;
+    text-align: center;
+
+
+    border-radius: 12px;
+    background-color: #f2f2f2;
+    margin: auto;
+}
+
+#adOption {
+
+    color: #F2DEBA;
+    font-weight: bold;
+    display: block;
+    width: 25%;
+    background-color: #4E6C50;
+
+    border-radius: 12px;
+    padding: 20px;
+    margin: auto;
+
+
+
+}
+
+
+
+#adOption input[type=checkbox] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+    width: 20px;
+    margin-bottom: 2px;
+}
+
+#adOption input {
+    border-radius: 5px;
+    border: none;
+}
+
+#tipI,
+#coupI,
+#person {
+    text-align: center;
+    float: right;
+    width: 30%;
+    margin-bottom: 2px;
+}
+
+#cartEmpty {
+    width: 50%;
+
+    background-color: #F2DEBA;
+    border-radius: 12px;
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.footer {
+    display: block;
+    background-color: #4E6C50;
+    padding: 35px;
+   
+    background-size: contain;
+    padding-bottom: 0%;
+    /* text-align: center; */
+
+}
+
+.footertext {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+
+footer img {
+    display: inline;
+    padding: 5px;
+
+
+}
+
+footer .hide {
+    display: none;
+}
+
+
+
+footer button {
+    position: relative;
+    left: 70%;
+    border-radius: 25px;
+    bottom: 20px;
+    height: 61px;
+    background-color: #820000;
+}
+
+#icon {
+    float: left;
+
+    /* background-color: green; */
+}
+
+.tooltip {
+    position: relative;
+    display: inline;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 250%;
+
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .fb {
+    background-color: rgb(24, 119, 242);
+    color: white;
+
+}
+
+.tooltip .insta {
+    /* background-color: red; */
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: white;
+}
+
+.tooltip .whatsapp {
+    background-color: lightgreen;
+    color: white;
+}
+
+.tooltip .linkd {
+    background-color: #007bb5;
+    color: white;
+}
+
+.tooltip .youtube {
+    background-color: red;
+    color: white;
+}
+
+.tooltip .x {
+    background-color: rgb(85, 172, 238);
+    color: white;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+small {
+    position: absolute;
+    left: 50%;
+    margin-top: 20px;
+    transform: translate(-50%, -50%);
 }
