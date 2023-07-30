@@ -8,19 +8,15 @@
     list-style-type: none;
 }
 
-.center {
-    text-align: center;
-    margin: auto;
-    display: block;
 
-}
 
  h1 {
      display: block;
      text-align: center;
      margin-top: 5px;
      margin-bottom: 10px;
-     background-color: bisque;
+     color:#2E8B57;
+     background-color: #FFD700;
 
 
  }
@@ -32,17 +28,17 @@
 
 a {
 
-    color: #F2DEBA;
+    color: white;
 
 }
 
 nav a:hover {
-    color: #FAECD6;
+    color:#FF6347;
 }
 
 
 nav {
-    background-color: #4E6C50;
+    background-color: #2E8B57;
     overflow: hidden;
     position: sticky;
     top: 0;
