@@ -165,6 +165,7 @@ form input {
 }
 
 .form_style {
+    margin-top: 20px;
     width: 400px;
     border-radius: 12px;
     background-color: #f2f2f2;
