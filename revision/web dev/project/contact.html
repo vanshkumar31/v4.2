@@ -3,70 +3,77 @@
 
 <head>
     <meta charset="UTF-8">
-<link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="iscript.js"></script>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Contact us</title>
 </head>
 
-<body><div id="up"></div>
+<body>
+    <div id="up"></div>
     <nav>
-    <ul class="nav_left">
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-        <li>
-            <a href="menu.html">
-                menu
-            </a>
-        </li>
-        <li>
-            <a href="contact.html">
-                Contact Us
-            </a>
-        <li>
-            <a href="about.html">
-                About Us
-            </a>
-        </li>
-    </ul>
-    <ul class="nav_right">
-        <li>
-            <a href="cart.html">
-                My Order
-            </a>
-        </li>
+        <ul class="nav_left">
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="menu.html">
+                    menu
+                </a>
+            </li>
+            <li>
+                <a href="contact.html">
+                    Contact Us
+                </a>
+            <li>
+                <a href="about.html">
+                    About Us
+                </a>
+            </li>
+        </ul>
+        <ul class="nav_right">
+            <li>
+                <a href="cart.html">
+                    My Order
+                </a>
+            </li>
 
-        <li>
-            <a href="login.html">Login </a>
-            <!--sign up icon-->
-        </li>
+            <li>
+                <a href="login.html">Login </a>
+                <!--sign up icon-->
+            </li>
 
-        <li style="cursor: pointer; color: #F2DEBA;">Mode
-            <!--icon of mode(dark and light)-->
-        </li>
+            <li style="cursor: pointer; color: #F2DEBA;">Mode
+                <!--icon of mode(dark and light)-->
+            </li>
 
-    </ul>
-</nav>
+        </ul>
+    </nav>
     <div class="form_contact">
         <div class="form_style">
-            <form name="form" onsubmit="verifyForm()" method="get">
-                <label>User Name</label><input name="name" type="text" placeholder="User name" id="userName"
-                    align="middle" /><span id="nE" style="color: red"></span> <br />
+            <form name="form" method="get">
+                <label>User Name</label>
+                <input name="name" type="text" placeholder="User name" id="name" />
+                <span id="userNameE"></span> <br />
                 <label>Email</label>
-                <input name="email" type="email" placeholder="Email" id="email" align="middle" /><span id="eE"
-                    style="color: red"></span><br />
-                <label>Phone Number</label><input name="userNumber " type="number" placeholder="Number" id="numb"
-                    align="middle" /><span id="pE" style="color: red"></span><br /><label>Your Query</label>
-                <textarea rows="5" cols="60" name="Message" id="Message" placeholder="Your Query"></textarea>
-                <button type="button" onclick="verifySubmit()">Submit</button>
+                <input name="email" type="email" placeholder="Email" id="email" />
+                <span id="userEmailE"></span><br />
+                <label>Phone Number</label>
+                <input name="userNumber " type="number" placeholder="Number" id="numb"/>
+                <span id="userNumbE"></span><br />
+                <label>Your Query</label>
+                <textarea rows="5" cols="60" name="Message" id="message" placeholder="Your Query"></textarea>
+                <span id="messE"></span><br>
+                <button type="button" onclick="verifycontact()">Submit</button>
                 <button id="reset" type="reset" value="Reset">Reset</button>
             </form>
         </div>
-    </div><footer>
+    </div>
+    <footer>
         <h1 class="center noFloat">Follow us</h1>
         <div class="footer">
             <div id="icon">
@@ -90,14 +97,16 @@
                 <div class="tooltip"><img src="resource/img/png/twitter_c.png" alt="twitter">
                     <span class="tooltiptext x">Twitter</span>
                 </div>
-    
+
             </div>
             <small>Copyright © 2023 | All Rights Reserved</small>
             <br><small>web designer: <a href="potfolio.html">vansh Kumar</a></small>
-    
-    
+
+
             <button type="button"><a href="#up"><img src="resource/img/png/arrow.png" alt="uparrow"></a></button>
             <!-- fb,insta,youtube -->
         </div>
     </footer>
-    </body></html>
+</body>
+
+</html>

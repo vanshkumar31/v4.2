@@ -59,7 +59,17 @@ function verifyAddress() {
         document.getElementById("addE").innerHTML = "";
     }
 }
-
+//check Message
+function verifyMessage() {
+    const address = document.getElementById("message").value;
+    if (address == "") {
+        document.getElementById("messE").innerHTML =
+            "Query field should not be empty ";
+        document.getElementById("messE").style.color = "red";
+    } else {
+        document.getElementById("messE").innerHTML = "";
+    }
+}
 //check password span id passE
 function verifyPassword() {
     var Password = document.getElementById("password").value;
@@ -151,4 +161,12 @@ function verifyForm() {
 function verifySubmit() {
     verifyPassword();
     verifyEmail();
+}
+function verifycontact() {
+    // console.log("dd");
+    verifyUserName();
+    verifyEmail();
+    verifyNumb(); 
+    verifyMessage();
+    
 }
