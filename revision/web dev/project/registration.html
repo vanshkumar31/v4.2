@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <script src="iscript.js"></script>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Registration</title>
 </head>
 
-<body >
+<body onload="mode()">
     <nav>
         <ul class="nav_left">
             <li>
@@ -45,9 +46,12 @@
                 <!--sign up icon-->
             </li>
     
-            <li style="cursor: pointer; color: #F2DEBA;">Mode
-                <!--icon of mode(dark and light)-->
-            </li>
+            <li class="mode">Mode
+                <div class="mode-containt">
+                    <button type="button" onclick="lightMode()">light mode</button>
+                    <button type="button" onclick="darkMode()">Dark mode</button>
+                </div>
+                </div>
     
         </ul>
     </nav><div id="up"></div>

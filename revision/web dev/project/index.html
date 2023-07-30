@@ -3,16 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     <script src="script.js"></script>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <script src="iscript.js"></script>
     <title>Shopping site</title>
 </head>
 
-<body><div id="up"></div>
+<body onload="mode()">
+    <div id="up"></div>
     <nav>
         <ul class="nav_left">
             <li>
@@ -47,7 +46,12 @@
                 <!--sign up icon-->
             </li>
 
-            <li style="cursor: pointer; color: #F2DEBA;">Mode
+            <li class="mode">Mode
+                <div class="mode-containt">
+                    <button type="button" onclick="lightMode()">light mode</button>
+                    <button type="button" onclick="darkMode()">Dark mode</button>
+                </div>
+                </div>
                 <!--icon of mode(dark and light)-->
             </li>
 
@@ -56,17 +60,12 @@
     <header>
         <div class="slider">
             <a class="pre" onclick="plusSlides(-1)">&lt</a>
-            <img src="resource/img/g1.jfif" alt="img1" id="slide1"
-                style="display: block;" class="myslide">
+            <img src="resource/img/g1.jfif" alt="img1" id="slide1" style="display: block;" class="myslide">
             <a class="next_s" onclick="plusSlides(-1)">&gt</a>
-            <img src="resource/img/g2.jfif" alt="img2" style="display: none;"
-                id="slide2" class="myslide">
-            <img src="resource/img/g3.jfif" alt="img3" style="display: none;"
-                id="slide3" class="myslide">
-            <img src="resource/img/g4.jfif" alt="img4" style="display: none;"
-                id="slide4" class="myslide">
-            <img src="resource/img/g5.jfif" alt="img5" style="display: none;"
-                id="slide5" class="myslide">
+            <img src="resource/img/g2.jfif" alt="img2" style="display: none;" id="slide2" class="myslide">
+            <img src="resource/img/g3.jfif" alt="img3" style="display: none;" id="slide3" class="myslide">
+            <img src="resource/img/g4.jfif" alt="img4" style="display: none;" id="slide4" class="myslide">
+            <img src="resource/img/g5.jfif" alt="img5" style="display: none;" id="slide5" class="myslide">
 
         </div>
     </header>
@@ -113,7 +112,7 @@
     </main>
     </div>
     <h1 class="center noFloat">Testimonials</h1>
-    <h3 style="display: block; text-align: center;" >user review</h3>
+    <h3 style="display: block; text-align: center;">user review</h3>
     <hr>
     <section>
 
@@ -188,7 +187,7 @@
             <br><small>web designer: <a href="potfolio.html">vansh Kumar</a></small>
 
 
-            <button type="button"><a href="#up"><img src="resource/img/png/arrow.png" alt="uparrow" ></a></button>
+            <button type="button"><a href="#up"><img src="resource/img/png/arrow.png" alt="uparrow"></a></button>
             <!-- fb,insta,youtube -->
         </div>
     </footer>

@@ -21,8 +21,7 @@ function verifyEmail() {
     else {
         document.getElementById("userEmailE").innerHTML = "";
     }
-}
-//check Number id numb span id userNumbE
+}//check Number id numb span id userNumbE
 function verifyNumb() {
     const Number = document.getElementById("numb").value;
     if (Number == "") {
@@ -36,8 +35,7 @@ function verifyNumb() {
     else {
         document.getElementById("UserNumbE").innerHTML = "";
     }
-}
-//check user name id name and span id userNameE
+}//check user name id name and span id userNameE
 function verifyUserName() {
     const Name = document.getElementById("name").value;
     if (Name == "") {
@@ -47,8 +45,7 @@ function verifyUserName() {
     } else {
         document.getElementById("userNameE").innerHTML = "";
     }
-}
-//check address
+}//check address id address and span id addE
 function verifyAddress() {
     const address = document.getElementById("address").value;
     if (address == "") {
@@ -58,8 +55,7 @@ function verifyAddress() {
     } else {
         document.getElementById("addE").innerHTML = "";
     }
-}
-//check Message
+}//check Message id message and span id messE
 function verifyMessage() {
     const address = document.getElementById("message").value;
     if (address == "") {
@@ -69,8 +65,7 @@ function verifyMessage() {
     } else {
         document.getElementById("messE").innerHTML = "";
     }
-}
-//check password span id passE
+}//check password span id passE
 function verifyPassword() {
     var Password = document.getElementById("password").value;
 
@@ -82,8 +77,7 @@ function verifyPassword() {
     else {
         document.getElementById("passE").innerHTML = "";
     }
-}
-//check password strength span id passE
+}//check password strength span id passE
 function passStrenth() {
     var Password = document.getElementById("password").value;
     const pasLen = document.getElementById("password").value.length;
@@ -147,8 +141,7 @@ function confirmPassword() {
             "Password  should be same ";
         document.getElementById("cPassE").style.color = "red";
     }
-}
-//check name,email,password,password strength,number
+}//check name,email,password,confirm password strength,number
 function verifyForm() {
     verifyUserName();
     verifyEmail();
@@ -157,16 +150,154 @@ function verifyForm() {
     verifyPassword();
     confirmPassword();
     passStrenth();
-}
+}//check email,password
 function verifySubmit() {
     verifyPassword();
     verifyEmail();
-}
+}//check name,email,numb,message
 function verifycontact() {
-    // console.log("dd");
+    
     verifyUserName();
     verifyEmail();
     verifyNumb(); 
     verifyMessage();
     
+}//open sidebar
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    const cartItems = document.getElementById('cart-items');
+    cartItems.style.display = "block";
+    cartItems.innerHTML = " ";
+    const menucart = JSON.parse(localStorage.getItem('cart')) || [];
+    menucart.forEach((item) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ${item.price}(${item.size})`;
+        cartItems.appendChild(li);
+    });
+}//close sidebar
+function closeNav() {
+    document.getElementById('cart-items').style.display = "none"
+    document.getElementById("mySidenav").style.width = "0";
+}//check mode
+function mode() {
+    const mode = localStorage.getItem("mode");
+    mode === "darkMode" ? darkMode() : lightMode()
+}//dark mode
+function darkMode() {
+    document.body.classList.add("dark-mode");
+    localStorage.setItem("mode", "darkMode");
+}//light mode
+function lightMode() {
+    document.body.classList.remove("dark-mode");
+    localStorage.setItem("mode", "lightMode")
+}//order item table
+function orderItem() {
+    var table = document.getElementById("storeList").getElementsByTagName('tbody')[0];
+    var menucart = JSON.parse(localStorage.getItem('cart')) || [];
+    s = 1;
+    menucart.forEach((item) => {
+
+        var newRow = table.insertRow(table.length);
+        cell1 = newRow.insertCell(0);
+        cell1.innerHTML = s++;
+        cell2 = newRow.insertCell(1);
+        cell2.innerHTML = item.name;
+        cell3 = newRow.insertCell(2);
+        cell3.innerHTML = item.size;
+        cell4 = newRow.insertCell(3);
+        cell4.innerHTML = 1;
+        cell5 = newRow.insertCell(4);
+        cell5.innerHTML = item.price;
+        cell6 = newRow.insertCell(5);
+        cell6.innerHTML = item.price;
+        bill = Number(item.price) + bill;
+        a = Number(bill);
+    });
+}//tip
+function giveTip() {
+    const tip = document.getElementById("tipI");
+
+    if (tip.style.display === "inline-block") {
+        tip.style.display = "none";
+        document.getElementById("output").innerHTML = `Total Item:<b>${y} </b>\x20        Total Bill:<b>${Number(bill)}</b>`;
+
+    } else {
+        tip.style.display = "inline-block";
+
+        tip.oninput = function () {
+            let value = tip.value;
+            value = value < 0 ? 0 : tip.value;
+            bill = a + Number(tip.value);
+            document.getElementById("output").innerHTML = `Total Item:<b>${y} </b>\x20        Total Bill:<b>${Number(bill)}</b>`
+        };
+
+    }
+
+
+}//coupon
+function coupon() {
+    const x = document.getElementById("coupI");
+
+    if (x.style.display === "inline-block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "inline-block";
+
+    }
+}//bill split
+function split() {
+    const x = document.getElementById("person");
+
+    if (x.style.display === "inline-block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "inline-block";
+
+        x.oninput = function () {
+            let value = x.value;
+            value = value < 1 ? 1 : x.value;
+            let newbill = bill / value;
+            document.getElementById("output").innerHTML = `Total Item:<b>${y} </b>\x20        Total Bill:<b>${bill}</b>
+                <br>Per person:<b>${newbill}</b>`
+        };
+    }
+
+}//clear the local storage of cart
+function clearCartHandler() {
+    localStorage.removeItem('cart');
+    document.getElementById('tbody').innerHTML = '';
+    cart();
+}//add to cart and store data in local storage
+function addToCart(orderId, size, price, name) {
+    const product = {
+        orderId: orderId,
+        size: size,
+        price: price,
+        name: name
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingProduct = cart.find(function (item) {
+
+        return item.orderId === orderId && item.price === price;
+    });
+
+    if (!existingProduct) {
+        cart.push(product);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+} //show advance option like tip,coupon,split bill
+function option() {
+    const x = document.getElementById("option");
+
+    if (x.style.display === "block") {
+        x.style.display = "none"; bill = a;
+        document.getElementById("output").innerHTML = `Total Item:<b>${y} </b>\x20 Total Bill:<b>${bill}</b>`;
+
+
+    } else {
+        x.style.display = "block";
+    }
 }

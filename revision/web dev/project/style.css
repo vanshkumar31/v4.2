@@ -8,36 +8,53 @@
     list-style-type: none;
 }
 
+:root {
+    --bodybg: #FFFFFF;
+    --bg: #2E8B57;
+    --headingBg: #FFD700;
+    --textcolor: #FFFFFF;
+    --hoverColor: #ff6347;
+    --headingText: #2E8B57;
+    --boxbg: #f2f2f2;
+    --menubtnhover: #F08080;
+    --oddtab: #3CB371;
+    --tdcolor: #333333;
+    --th: #820000;
+}
 
 
- h1 {
-     display: block;
-     text-align: center;
-    
-     color:#2E8B57;
-     background-color: #FFD700;
+h1 {
+    display: block;
+    text-align: center;
+
+    color: var(--headingText);
+    background-color: var(--headingBg);
 
 
- }
+}
 
- button#clearCartButton {
-     background-color: crimson;
-     color: whitesmoke;
- }
+button#clearCartButton {
+    background-color: var(--hoverColor);
+    color: var(--textcolor);
+}
+
+button#clearCartButton:hover {
+    background-color: var(--menubtnhover);
+}
 
 a {
 
-    color: white;
+    color: var(--textcolor);
 
 }
 
 nav a:hover {
-    color:#FF6347;
+    color: var(--hoverColor);
 }
 
 
 nav {
-    background-color: #2E8B57;
+    background-color: var(--bg);
     overflow: hidden;
     position: sticky;
     top: 0;
@@ -71,13 +88,17 @@ header {
 header a {
     position: absolute;
     top: 50%;
-    color: #F2DEBA;
-    background-color: #820000;
+    color: var(--textcolor);
+    background-color: var(--hoverColor);
     border: 0;
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
 
+}
+
+header a:hover {
+    background-color: var(--menubtnhover);
 }
 
 .pre {
@@ -103,7 +124,8 @@ header a {
     width: 35%;
     padding: 8px;
     margin: 10px;
-    background-color: grey;
+    background-color: var(--boxbg);
+    border-radius: 14px;
 }
 
 .noFloat {
@@ -118,24 +140,28 @@ button {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 5px;
-    background-color: #4E6C50;
-    color: #F2DEBA;
+    background-color: var(--bg);
+    color: var(--textcolor);
     display: inline-block;
 }
 
 button:hover {
-    background-color: #820000;
+    background-color: var(--hoverColor);
 }
 
 button#reset:hover {
-    background-color: crimson;
-    color: whitesmoke;
+    background-color: var(--th);
+    color: var(--textcolor);
 
 }
 
 input {
     resize: none;
     height: 25px;
+    background-color: var(--bodybg);
+
+    color: var(--tdcolor);
+
 }
 
 ::placeholder {
@@ -145,7 +171,7 @@ input {
 
 form label {
 
-    color: #820000;
+    color: var(--hoverColor);
     font-weight: bold;
     display: block;
     margin: 10px 0px;
@@ -164,11 +190,17 @@ form input {
 
 }
 
+textarea {
+    background-color: var(--bodybg);
+
+    color: var(--tdcolor);
+}
+
 .form_style {
     margin-top: 20px;
     width: 400px;
     border-radius: 12px;
-    background-color: #f2f2f2;
+    background-color: var(--boxbg);
     padding: 20px;
     position: absolute;
     top: 50%;
@@ -246,17 +278,23 @@ th {
 
     text-align: center;
     padding: 8px;
+
 }
 
 th {
-    color: #FAECD6;
+    color: var(--textcolor);
     background-color: #820000;
 
 }
 
 tr:nth-child(odd) {
-    background-color: #4E6C50;
-    color: #F2DEBA;
+    background-color: var(--bg);
+    color: var(--textcolor);
+}
+
+tr:nth-child(even) {
+    color: var(--tdcolor);
+
 }
 
 main table button {
@@ -264,42 +302,49 @@ main table button {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 5px;
-    background-color: crimson;
-    color: #F2DEBA;
+    background-color: var(--hoverColor);
+    color: var(--textcolor);
     display: inline-block;
+}
+
+main table button:hover {
+    background-color: var(--menubtnhover);
 }
 
 /* ---------------------------------------------- */
 .sidenav {
-    height: 100%;
+    height: 90%;
     width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: white;
+    background-color: var(--boxbg);
     overflow-x: hidden;
     transition: width 0.5s;
     padding-top: 60px;
+    border-radius: 15px 0px 0px 15px;
 }
 
 #cart-items li {
     padding: 5px;
     margin-left: 15%;
     list-style-type: decimal-leading-zero;
+    color:var(--tdcolor);
 }
 
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: var(--tdcolor);
     display: block;
+
     transition: 0.3s;
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: var(--hoverColor);
 }
 
 .sidenav .closebtn {
@@ -331,7 +376,7 @@ main table button {
     text-align: left;
     outline: none;
     font-size: 25px;
-    color: beige;
+    color: var(--textcolor);
 
     margin-bottom: 5px;
     margin-left: 50px;
@@ -339,7 +384,7 @@ main table button {
 
 .accordion:nth-child(2n+1) {
 
-    background-color: #4E6C50;
+    background-color: var(--oddtab);
 
 }
 
@@ -427,9 +472,9 @@ div.accordion:nth-child(3n-2) {
 
 .footer {
     display: block;
-    background-color: #4E6C50;
+    background-color: var(--bg);
     padding: 35px;
-   
+
     background-size: contain;
     padding-bottom: 0%;
     /* text-align: center; */
@@ -461,18 +506,31 @@ footer button {
     border-radius: 25px;
     bottom: 20px;
     height: 61px;
-    background-color: #820000;
+    background-color: var(--hoverColor);
+}
+
+footer button:hover {
+    background-color: var(--menubtnhover);
+}
+
+h2 {
+    color: var(--bg)
+}
+
+h3,
+p {
+    color: var(--tdcolor)
 }
 
 #icon {
     float: left;
 
-    /* background-color: green; */
 }
 
 .tooltip {
     position: relative;
     display: inline;
+    color: var(--textcolor)
 }
 
 .tooltip .tooltiptext {
@@ -493,34 +551,34 @@ footer button {
 
 .tooltip .fb {
     background-color: rgb(24, 119, 242);
-    color: white;
+
 
 }
 
 .tooltip .insta {
     /* background-color: red; */
     background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-    color: white;
+
 }
 
 .tooltip .whatsapp {
     background-color: lightgreen;
-    color: white;
+
 }
 
 .tooltip .linkd {
     background-color: #007bb5;
-    color: white;
+
 }
 
 .tooltip .youtube {
     background-color: red;
-    color: white;
+
 }
 
 .tooltip .x {
     background-color: rgb(85, 172, 238);
-    color: white;
+
 }
 
 .tooltip:hover .tooltiptext {
@@ -533,4 +591,36 @@ small {
     left: 50%;
     margin-top: 20px;
     transform: translate(-50%, -50%);
+}
+
+
+.mode-containt {
+    display: none;
+    position: fixed;
+    
+}
+.mode{
+    cursor: pointer;
+    color: var(--textcolor);
+}
+.mode-containt button{
+    display: block;
+    border-radius: 12px;
+}
+
+
+
+.mode:hover  .mode-containt{
+    display: block;
+}
+.dark-mode {
+    background-color: #262626;
+    --bodybg: #262626;
+    --bg: #1F693F;
+    --headingBg: #E1C50F;
+    --hoverColor: #FFA07A;
+    --headingText: #FFFFFF;
+    --boxbg: #303030;
+    --oddtab: #557E55;
+    --tdcolor: white;
 }
