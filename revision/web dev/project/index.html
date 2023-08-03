@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
     <script src="script.js"></script>
-    <script src="iscript.js"></script>
     <title>Shopping site</title>
 </head>
 
@@ -58,54 +57,48 @@
         </ul>
     </nav>
     <header>
-        <div class="slider">
-            <a class="pre" onclick="plusSlides(-1)">&lt</a>
-            <img src="resource/img/g1.jfif" alt="img1" id="slide1" style="display: block;" class="myslide">
-            <a class="next_s" onclick="plusSlides(-1)">&gt</a>
-            <img src="resource/img/g2.jfif" alt="img2" style="display: none;" id="slide2" class="myslide">
-            <img src="resource/img/g3.jfif" alt="img3" style="display: none;" id="slide3" class="myslide">
-            <img src="resource/img/g4.jfif" alt="img4" style="display: none;" id="slide4" class="myslide">
-            <img src="resource/img/g5.jfif" alt="img5" style="display: none;" id="slide5" class="myslide">
+        <a class="pre" onclick="slide(-1)">&lt</a>
+        <div id="slider">
 
-        </div>
+        </div><a class="next_s" onclick="slide(1)">&gt</a>
     </header>
     <h1 class="center">Our Product</h1>
     <main>
         <div class="product_gallery">
             <img src="resource/img/p1.jfif" alt="product1">
-            <div class="overlay"> <button type="button" onclick="addToCartHandler" class="add-to-cart"
-                    data-product-id="1">Add to cart</button>
+            <div class="overlay"> <button type="button" onclick="tab(1)" class="addToCart"
+                    >view product</button>
             </div>
 
         </div>
         <div class="product_gallery">
-            <img src="resource/img/p2.jfif" alt="product2">
-            <div class="overlay"> <button type="button" class="add-to-cart" data-product-id="2">Add to cart</button>
+            <img src="resource/img/pizza.png" alt="product2">
+            <div class="overlay"> <button type="button" class="add-to-cart" onclick="tab(0)">view product</button>
             </div>
 
         </div>
         <div class="product_gallery">
-            <img src="resource/img/p3.jfif" alt="product3">
-            <div class="overlay"> <button type="button" class="add-to-cart" data-product-id="3">Add to cart</button>
+            <img src="resource/img/shake.png" alt="product3">
+            <div class="overlay"> <button type="button" class="add-to-cart" onclick="tab(8)">view product</button>
             </div>
 
         </div>
         <div class="product_gallery">
-            <img src="resource/img/p1.jfif" alt="product4">
-            <div class="overlay"> <button type="button" class="add-to-cart" data-product-id="4">Add to cart</button>
+            <img src="resource/img/noodle.png" alt="product4">
+            <div class="overlay"> <button type="button" class="add-to-cart"  onclick="tab(6)">view product</button>
             </div>
 
 
         </div>
         <div class="product_gallery">
-            <img src="resource/img/p1.jfif" alt="product5">
-            <div class="overlay"> <button type="button" class="add-to-cart" data-product-id="5">Add to cart</button>
+            <img src="resource/img/sandwich.png" alt="product5">
+            <div class="overlay"> <button type="button" class="add-to-cart" onclick="tab(3)">view product</button>
             </div>
 
         </div>
         <div class="product_gallery">
-            <img src="resource/img/p1.jfif" alt="product6">
-            <div class="overlay"> <button type="button" class="add-to-cart" data-product-id="6">Add to cart</button>
+            <img src="resource/img/icecream.png" alt="product6">
+            <div class="overlay"> <button type="button" class="add-to-cart"  onclick="tab(11)">view product</button>
             </div>
 
         </div>
@@ -114,46 +107,18 @@
     <h1 class="center noFloat">Testimonials</h1>
     <h3 style="display: block; text-align: center;">user review</h3>
     <hr>
-    <section>
-
-        <div>
-            <div class="test">
-                <div class="column ">
-                    <h2>Heading1</h2>
-                    <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas
-                        oporteat nam.
-                        Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-                </div>
-
-                <div class="column ">
-                    <h2>Heading2</h2>
-                    <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas
-                        oporteat nam.
-                        Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-                </div>
-
-                <div class="column ">
-                    <h2>Heading3</h2>
-                    <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas
-                        oporteat nam.
-                        Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-                </div>
-
-                <div class="column ">
-                    <h2>Heading4</h2>
-                    <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas
-                        oporteat nam.
-                        Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-                </div>
-                <div class="column ">
-                    <h2>Heading5</h2>
-                    <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas
-                        oporteat nam.
-                        Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-                </div>
-
+    <br>
+    <section>       
+            <div class="column  ">
+                <h2 id="rew-head">Hygienic and Safe  </h2><hr>
+                <br>
+                <p id="rew-des">I appreciate the resort's focus on hygiene and safety measures.", "I felt comfortable dining in during these challenging
+                times.  </p>
             </div>
-        </div>
+
+
+
+    
     </section><br>
 
 
@@ -193,11 +158,5 @@
     </footer>
 
 </body>
-<script>
-
-</script>
 
 </html>
-
-
-<!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->

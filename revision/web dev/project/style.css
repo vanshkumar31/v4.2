@@ -77,12 +77,25 @@ nav {
 
 
 }
+/* ---------- */
+ #slider {
+    background-image: url(resource/img/g1.png);
+     text-align: center;
+     background-position: center;
+     display: inline-block;
+     background-size: cover;
+     width: 100%;
+     min-height: 59vh;
+     border-radius: 20px;
 
+
+
+ }
+/* --------- */
 header {
     position: relative;
-    overflow-y: hidden;
-    object-fit: cover;
-    max-height: 450px;
+
+   
 }
 
 header a {
@@ -109,25 +122,22 @@ header a:hover {
     right: 0%;
 }
 
-.slider img {
-
-    z-index: -1;
-    height: inherit;
-    width: 100%;
-    min-height: 100px;
-    transition: linear 1s;
-}
 
 .column {
 
-    float: left;
+    min-height: 150px;
     width: 35%;
     padding: 8px;
-    margin: 10px;
     background-color: var(--boxbg);
     border-radius: 14px;
+    margin: auto;
+    text-align: center;
+  
 }
 
+.column p{
+    line-height:24px ;
+}
 .noFloat {
     clear: both;
 }
@@ -135,7 +145,38 @@ header a:hover {
 .test {
     display: block;
 }
+/* --------- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+.about-heading {
+    background-color: var(--headingBg);
+    color: var(--headingText);
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.about-content p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.about-content {
+    margin-top: 20px;
+    text-align: justify;
+    padding: 12px;
+    line-height: 1.6;
+    color: var(--tdcolor);
+    background-color: var(--boxbg);
+    border-radius: 12px;
+}
+/* --------- */
 button {
     border-radius: 5px;
     padding: 10px;
@@ -623,4 +664,9 @@ small {
     --boxbg: #303030;
     --oddtab: #557E55;
     --tdcolor: white;
+}
+
+/* -------------------- */
+.hide{
+    display: none;
 }

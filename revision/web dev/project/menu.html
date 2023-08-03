@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="resource/img/favicon.ico" type="image/x-icon">
     <script src="script.js"></script>
-    <script src="iscript.js"></script>
  </head>
 
-<body onload="mode()"><nav>
+<body onload="indexx()">
+    <nav>
     <ul class="nav_left">
         <li>
             <a href="index.html">
@@ -63,7 +63,7 @@
         </div>
     </div>
     <main>
-        <div class="accordion">Pizza</div>
+        <div class="accordion" id="0">Pizza</div>
         <div class="panel">
             <table id="menu">
                 <thead>
@@ -161,7 +161,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Burger</div>
+        <div class="accordion"id="1">Burger</div>
         <div class="panel">
             <table>
                 <thead>
@@ -278,7 +278,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Fries</div>
+        <div class="accordion" id="2">Fries</div>
         <div class="panel">
             <table>
                 <thead>
@@ -351,7 +351,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Sandwich</div>
+        <div class="accordion" id="3">Sandwich</div>
         <div class="panel">
             <table>
                 <thead>
@@ -430,7 +430,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Wrap</div>
+        <div class="accordion" id="4">Wrap</div>
         <div class="panel">
             <table>
                 <thead>
@@ -505,7 +505,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Pasta</div>
+        <div class="accordion" id="5">Pasta</div>
         <div class="panel">
             <table>
                 <thead>
@@ -564,7 +564,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Noodles</div>
+        <div class="accordion" id="6">Noodles</div>
         <div class="panel">
             <table>
                 <thead>
@@ -590,7 +590,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Salad</div>
+        <div class="accordion" id="7">Salad</div>
         <div class="panel">
             <table>
                 <thead>
@@ -643,7 +643,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Shake</div>
+        <div class="accordion" id="8">Shake</div>
         <div class="panel">
             <table>
                 <thead>
@@ -776,7 +776,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Beverages</div>
+        <div class="accordion" id="9">Beverages</div>
         <div class="panel">
             <table>
                 <thead>
@@ -858,7 +858,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Tea</div>
+        <div class="accordion" id="10">Tea</div>
         <div class="panel">
             <table>
                 <thead>
@@ -896,7 +896,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="accordion">Ice Cream</div>
+        <div class="accordion" id="11">Ice Cream</div>
         <div class="panel">
             <table>
                 <thead>
@@ -977,9 +977,9 @@
 <script>
 
     var acc = document.getElementsByClassName("accordion");
-    var i;
+  
 
-    for (i = 0; i < acc.length; i++) {
+    for (var i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function () {
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
@@ -990,8 +990,14 @@
             }
         });
     }
-
-
+  
+function indexx() {mode()
+   const v= localStorage.getItem("open");
+     index = v===null?0:v;
+     if (index >= 0 && index < acc.length) {
+        acc[index].click();
+    }
+}
     document.querySelector('main').addEventListener('click', function (event) {
         var target = event.target;
         if (target.classList.contains('addToCart')) {
