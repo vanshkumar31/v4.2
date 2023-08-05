@@ -670,3 +670,6 @@ small {
 .hide{
     display: none;
 }
+#storeList button{
+    padding: 2px;
+}

@@ -232,6 +232,19 @@ function darkMode() {
 function lightMode() {
     document.body.classList.remove("dark-mode");
     localStorage.setItem("mode", "lightMode")
+}
+function deleted(r) {
+    var table = document.getElementById("storeList").getElementsByTagName('tbody')[0];
+    var i = r.parentNode.parentNode.rowIndex;
+    const orders = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log(i);
+    orders.splice(i-1, 1);
+    console.log(orders);
+    localStorage.setItem('cart', JSON.stringify(orders));
+
+  table.deleteRow(i - 1);
+  cart()
+
 }//order item table
 function orderItem() {
     var table = document.getElementById("storeList").getElementsByTagName('tbody')[0];
@@ -252,6 +265,7 @@ function orderItem() {
         cell5.innerHTML = item.price;
         cell6 = newRow.insertCell(5);
         cell6.innerHTML = item.price;
+        cell7 = newRow.insertCell(6).innerHTML = `<button  onclick=deleted(${'this'})><img  src="resource/img/trash.png"></button>`;
         bill = Number(item.price) + bill;
         a = Number(bill);
     });
