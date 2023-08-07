@@ -387,3 +387,6 @@ function cart() {
     }
 };
 
+function buy() {
+    alert(`Your Order has been placed Total bill:->${bill}`)
+}
